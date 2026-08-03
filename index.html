@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water, Passes, and Gold — Banavasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1a17;
+    --hero-bg:#11181a;
+    --hero-bg2:#1a2422;
+    --stone:#dee1d5;
+    --stone-2:#cfd4c4;
+    --brass:#b08a4e;
+    --brass-bright:#d3ad72;
+    --verdigris:#4f7a6c;
+    --rust:#8b4a3b;
+    --paper:#e9ebe0;
+    --rule: rgba(27,26,23,0.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    font-size:1.08rem;
+    line-height:1.7;
+  }
+  h1,h2,h3,.display{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:var(--verdigris);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--brass); outline-offset:2px;}
+
+  /* ---- river rail (signature element) ---- */
+  #river-rail{
+    position:fixed;
+    left:0; top:0;
+    width:64px; height:100vh;
+    z-index:50;
+    pointer-events:none;
+    display:none;
+  }
+  #river-rail svg{width:100%; height:100%;}
+  #river-path-bg{stroke:rgba(27,26,23,0.18); stroke-width:3; fill:none;}
+  #river-path-fg{stroke:var(--verdigris); stroke-width:3; fill:none;
+    stroke-dasharray: 3000; stroke-dashoffset:3000;
+    transition: stroke-dashoffset 0.1s linear;
+  }
+  @media(min-width:900px){ #river-rail{display:block;} body{margin-left:64px;} }
+
+  /* ---- top mobile progress ---- */
+  #top-progress{position:fixed; top:0; left:0; height:3px; background:var(--brass); width:0%; z-index:60; transition:width .1s linear;}
+  @media(min-width:900px){ #top-progress{display:none;} }
+
+  /* ---- hero ---- */
+  .hero{
+    background: radial-gradient(ellipse at 30% 20%, var(--hero-bg2), var(--hero-bg) 70%);
+    color:var(--paper);
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 8vh 6vw;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .eyebrow{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    color:var(--brass-bright);
+    margin-bottom:1.4rem;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6.5vw, 5.2rem);
+    line-height:1.02;
+    margin:0 0 1.6rem 0;
+    max-width:16ch;
+  }
+  .hero .sub{
+    font-size:clamp(1.05rem, 1.6vw, 1.3rem);
+    max-width:52ch;
+    color:#cfd6cf;
+    font-style:italic;
+  }
+  .hero .scrolldown{
+    position:absolute; bottom:6vh; left:6vw;
+    font-size:0.75rem; color:#8fa39a;
+  }
+  .hero-river{
+    position:absolute; right:-5%; bottom:-10%; width:70%; max-width:800px; opacity:0.35;
+  }
+
+  /* ---- sections ---- */
+  section.chapter{
+    max-width:760px;
+    margin: 0 auto;
+    padding: 7rem 6vw 2rem 6vw;
+  }
+  .chapter-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--verdigris);
+    margin-bottom:0.6rem;
+  }
+  section.chapter h2{
+    font-size:clamp(1.7rem, 3.4vw, 2.5rem);
+    margin:0 0 1.6rem 0;
+    color:var(--ink);
+  }
+  section.chapter p{margin: 0 0 1.3rem 0;}
+  .lede::first-letter{
+    font-family:'Newsreader', serif;
+    font-size: 3.6rem;
+    float:left;
+    line-height:0.8;
+    padding-right:0.12em;
+    padding-top:0.06em;
+    color:var(--rust);
+    font-weight:600;
+  }
+
+  blockquote{
+    margin: 2.4rem 0;
+    padding: 1.2rem 1.6rem;
+    border-left: 3px solid var(--brass);
+    background: rgba(176,138,78,0.08);
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:#2a2823;
+  }
+
+  sup.note{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--rust);
+    cursor:pointer;
+    margin-left:1px;
+  }
+
+  figure{
+    margin: 2.2rem 0;
+  }
+  figure img{
+    width:100%;
+    display:block;
+    border-radius:2px;
+  }
+  figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:#5a5850;
+    margin-top:0.5rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  figcaption a{color:#5a5850;}
+
+  .figure-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+  }
+  @media(max-width:640px){ .figure-grid{grid-template-columns:1fr;} }
+
+  .map-embed{
+    width:100%; height:340px; border:1px solid var(--rule); filter:sepia(8%) saturate(85%);
+  }
+
+  .divider{
+    max-width:760px; margin: 0 auto; padding: 0 6vw;
+  }
+  .divider hr{border:none; border-top:1px solid var(--rule); margin:0;}
+
+  /* schematic map (custom SVG, own artwork) */
+  .schematic{ background:var(--paper); border:1px solid var(--rule); padding:1.6rem; margin:2.2rem 0; }
+  .schematic svg{width:100%; height:auto;}
+  .schematic-caption{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:#5a5850; margin-top:0.8rem;}
+
+  /* notes */
+  #notes{
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+  #notes h2{font-size:1.6rem;}
+  #notes ol{padding-left:1.3rem;}
+  #notes li{
+    font-size:0.92rem;
+    margin-bottom:0.8rem;
+    color:#38362f;
+  }
+  #notes li:target, #notes li.flash{ background: rgba(176,138,78,0.25); }
+
+  footer.site{
+    max-width:760px; margin:0 auto; padding: 3rem 6vw 6rem 6vw;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:#6a6858;
+  }
+
+  .fade-in{opacity:0; transform:translateY(14px); transition: opacity .7s ease, transform .7s ease;}
+  .fade-in.visible{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .fade-in{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div id="top-progress"></div>
+<div id="river-rail" aria-hidden="true">
+  <svg viewBox="0 0 64 1000" preserveAspectRatio="none">
+    <path id="river-path-bg" d="M 20 0 C 50 80, 10 160, 40 240 S 50 400, 20 480 S 10 620, 45 700 S 55 850, 25 1000" />
+    <path id="river-path-fg" d="M 20 0 C 50 80, 10 160, 40 240 S 50 400, 20 480 S 10 620, 45 700 S 55 850, 25 1000" />
+  </svg>
+</div>
+
+<header class="hero">
+  <svg class="hero-river" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M 40 40 C 200 40, 320 90, 320 200 C 320 310, 200 360, 40 360" stroke="#d3ad72" stroke-width="2" opacity="0.6"/>
+    <path d="M 70 70 C 200 70, 280 110, 280 200 C 280 290, 200 330, 70 330" stroke="#4f7a6c" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="180" cy="200" r="4" fill="#d3ad72"/>
+  </svg>
+  <div class="eyebrow mono">Karnataka Trade Cities — Essay I of IV</div>
+  <h1>Water, Passes,<br>and Gold</h1>
+  <p class="sub">The making of Banavasi — how a river-town with no coastline became one of the wealthiest crossings in the Deccan.</p>
+  <div class="scrolldown mono">↓ scroll</div>
+</header>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">I.</div>
+  <h2>The stone that survives</h2>
+  <p class="lede">There is a stone at Banavasi that has been standing for roughly eighteen hundred years, and it does not commemorate a king. It shows a serpent with five hoods, carved in the style the region reserved for its oldest and most local gods, and beside it runs an inscription in Prakrit recording the gift of a princess.</p>
+  <p>Her name was Sivaskanda Nagasri, daughter of a minor dynast named Haritiputra Vinhukada Chutukulananda Satakarni, and in the twelfth year of her father's reign — sometime in the later second century CE — she paid for a Buddhist monastery, a water tank, and this very stone, and had her act of generosity carved into rock so that it would outlast her.<sup class="note" data-note="1">[1]</sup> It has. The stone still sits within the precincts of the Madhukeshwara temple today, long after the dynasty that produced her has been reduced to a paragraph in gazetteers, long after the empire that eventually swallowed her father's kingdom has itself vanished, long after the language she spoke has changed beyond recognition.</p>
+  <p>It is worth starting here, rather than with the more famous dynasty that later made this town its capital, because the stone makes an argument that the rest of this history bears out again and again: Banavasi's importance did not begin with the people who are remembered for ruling it. It began with the water around it, and the hills behind it, and with what could be moved between the two.</p>
+
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Banavasi%20Madhukeshwara%20temple.JPG" alt="The Madhukeshwara Temple complex at Banavasi, stone-built with a stepped tower." loading="lazy">
+    <figcaption>Madhukeshwara Temple, Banavasi — Wikimedia Commons, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Banavasi_Madhukeshwara_temple.JPG" target="_blank" rel="noopener">Source &amp; credit</a></figcaption>
+  </figure>
+
+  <p>To understand why an inland town in the hill country of Karnataka became one of the wealthiest and most fought-over settlements in the peninsula, you have to stop thinking about the Indian Ocean trade as something that happened at ports, and start thinking about it as something that happened along lines — lines of passes, riverbanks, and cart-tracks, each one a narrow throat through which the wealth of an ocean had to be squeezed before it could reach anyone inland. Banavasi sat on one of those throats. It was never a port. It was, more usefully, a valve.</p>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">II.</div>
+  <h2>The town before the dynasty</h2>
+  <p>By the time anyone we might call a "king of Banavasi" existed in any organised sense, the town had already been a place of consequence for centuries. The Varada River wraps around it on three sides, giving it what a much later court poet — writing for the Chalukya emperor Pulakeshin II, who came to know the town as a conquest rather than a birthright — called a <em>jala-durga</em>, a water-fort.<sup class="note" data-note="2">[2]</sup> Long before any court poet wrote anything, the site had already produced Mesolithic tools and Iron Age megalithic burials, the debris of people who had worked out, without writing any of it down, that a loop of river and a gap in the hills made a good place to stop.<sup class="note" data-note="3">[3]</sup></p>
+
+  <p>The written record begins to thicken in the third century BCE, when the Sri Lankan chronicle known as the <em>Mahavamsa</em> records that the emperor Ashoka, in the course of dispatching Buddhist missionaries across his empire and beyond it, sent a monk named Rakshita to a place identified with this region.<sup class="note" data-note="4">[4]</sup> It passed afterward under the loose umbrella of Satavahana authority, and then more directly under a local Satavahana offshoot called the Chutus, whose rulers governed from Banavasi itself between roughly 125 and 345 CE — the dynasty into which Sivaskanda Nagasri, our princess with the serpent stone, was born.<sup class="note" data-note="5">[5]</sup></p>
+
+  <p>It was during this Chutu period, not the later and more celebrated Kadamba one, that Banavasi acquired its most striking piece of external corroboration. Around 150 CE, the Alexandrian geographer Claudius Ptolemy compiled his <em>Geography</em>, an attempt to fix the coordinates of the known world as reported to him by merchants, sailors, and earlier geographers he trusted. Among the towns of the interior Deccan that made his list is one he renders as <strong>"Banaouasei."</strong><sup class="note" data-note="6">[6]</sup></p>
+
+  <blockquote>Somebody, in other words, thought Banavasi worth mentioning to a Greek.</blockquote>
+
+  <p>The town wore several names across the centuries that followed — Vaijayanti in Sanskrit court poetry, Jayantipura once the Kadambas made it their seat, and later Konkanapura in the account of a Chinese pilgrim we will return to — and each name marks a different regime laying its own vocabulary over the same strategic patch of ground.<sup class="note" data-note="7">[7]</sup></p>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">III.</div>
+  <h2>Why an inland town controlled the sea's wealth</h2>
+  <p>The obvious question is why any of this mattered, given that Banavasi sits some eighty kilometres from the Arabian Sea, with a mountain range in between. The answer is the mountain range itself. The Western Ghats do not simply separate the Karnataka plateau from its coast; they force anyone moving goods between the two through a small number of viable passes, and the passes nearest Banavasi — the routes that modern roads still trace today through Devimane and Arbail towards Kumta — are the ones that geography, not any king, selected as the crossing points.<sup class="note" data-note="8">[8]</sup> A town that sat athwart the interior mouth of those passes did not need to produce anything itself to become rich. It needed only to be unavoidable.</p>
+
+  <div class="schematic">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic diagram showing the route from the Arabian Sea coast, up through a Western Ghats pass, to inland Banavasi and onward to the Deccan interior.">
+      <line x1="30" y1="180" x2="670" y2="180" stroke="#cfd4c4" stroke-width="1"/>
+      <rect x="20" y="120" width="90" height="60" fill="#4f7a6c" opacity="0.15"/>
+      <text x="65" y="200" text-anchor="middle" class="mono" font-size="11" fill="#38362f" font-family="IBM Plex Mono, monospace">ARABIAN SEA</text>
+      <text x="65" y="150" text-anchor="middle" class="mono" font-size="10" fill="#38362f" font-family="IBM Plex Mono, monospace">Kumta</text>
+
+      <path d="M 130 150 Q 230 40, 330 150" stroke="#8b4a3b" stroke-width="3" fill="none"/>
+      <text x="230" y="65" text-anchor="middle" class="mono" font-size="10" fill="#8b4a3b" font-family="IBM Plex Mono, monospace">WESTERN GHATS</text>
+      <text x="230" y="100" text-anchor="middle" class="mono" font-size="9" fill="#8b4a3b" font-family="IBM Plex Mono, monospace">Devimane / Arbail passes</text>
+
+      <circle cx="360" cy="150" r="7" fill="#b08a4e"/>
+      <text x="360" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#1b1a17" font-family="Newsreader, serif">Banavasi</text>
+      <text x="360" y="130" text-anchor="middle" class="mono" font-size="9" fill="#38362f" font-family="IBM Plex Mono, monospace">customs · coinage · guilds</text>
+
+      <line x1="400" y1="150" x2="640" y2="150" stroke="#4f7a6c" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="560" y="140" text-anchor="middle" class="mono" font-size="10" fill="#4f7a6c" font-family="IBM Plex Mono, monospace">to the Deccan interior</text>
+      <text x="560" y="170" text-anchor="middle" class="mono" font-size="9" fill="#4f7a6c" font-family="IBM Plex Mono, monospace">Paithan · Karla · beyond</text>
+    </svg>
+    <div class="schematic-caption">Fig. — schematic route diagram (original artwork for this article, not to scale). For the modern terrain, see the live map below.</div>
+  </div>
+
+  <iframe class="map-embed" title="Map of Banavasi and the surrounding Western Ghats passes"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=74.55%2C14.25%2C75.35%2C14.75&layer=mapnik&marker=14.5353%2C75.0171"
+    loading="lazy"></iframe>
+  <p class="schematic-caption" style="margin-top:0.6rem;">Live map — OpenStreetMap contributors, ODbL. <a href="https://www.openstreetmap.org/?mlat=14.5353&mlon=75.0171#map=10/14.5353/75.0171" target="_blank" rel="noopener">Open larger map</a></p>
+
+  <p style="margin-top:2rem;">This is worth dwelling on because it inverts the usual picture of ancient trade, which tends to fixate on the glamour of the coast — the wharves of Muziris, the Roman amphorae, the Yavana merchants disembarking with wine and glassware. Those ports were real and they mattered enormously. But wine and glass and Roman gold did not simply appear in the bazaars of the Deccan interior by magic; they had to be carried, on pack animals and ox-cart, up through a pass, past a town that could tax them, garrison the route, and offer safe lodging for the caravan before it pressed on toward Paithan or the wider Deccan. Banavasi's river, meanwhile, did the humbler but no less essential work of moving goods locally once they were off the mountain track.<sup class="note" data-note="9">[9]</sup> The <em>Periplus of the Erythraean Sea</em>, the extraordinary first-century merchant's handbook that survives from a Greek-speaking sailor working these waters, describes pepper above all moving out, and wine, glass, and worked metal moving in.<sup class="note" data-note="10">[10]</sup> Banavasi's fortune was to sit on the road that pepper had to walk before it became a caravan's cargo rather than a farmer's harvest.</p>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">IV.</div>
+  <h2>What the coins and the stones prove</h2>
+  <p>Abstractions about "trade routes" are cheap; what makes this history persuasive is the physical evidence, and Banavasi has produced an unusual amount of it for a town its size. Excavations and coin hoards at the site and nearby have turned up punch-marked silver coins of the old pan-Indian type, lead coinage issued locally under Satavahana rulers such as Yajna Sri Satakarni, and — more startling — a mould for casting Roman coins bearing the design of the emperor Tiberius, alongside fragments of fine Arretine pottery imported from Italy and locally made Rouletted Ware influenced by Mediterranean forms.<sup class="note" data-note="11">[11]</sup> None of this proves that Roman merchants themselves walked Banavasi's streets. It proves something arguably more interesting: that Roman-derived wealth had penetrated far enough inland to be locally recast and locally desired, two hundred kilometres from the nearest wharf.</p>
+
+  <p>If any single piece of evidence makes the abstraction concrete, though, it is not found at Banavasi at all, but four hundred kilometres to the north, cut into a rock face at Karla, near modern Pune. There, on the veranda of the largest rock-cut Buddhist prayer hall in South Asia, a Prakrit inscription records a gift. It reads, in translation:</p>
+
+  <blockquote>"Seth Bhutapala, from Vejayanti, has established this rock mansion, the most excellent in Jambudvipa."<sup class="note" data-note="12">[12]</sup></blockquote>
+
+  <div class="figure-grid">
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Karla%20caves%20Chaitya.jpg" alt="The Great Chaitya rock-cut prayer hall at Karla Caves." loading="lazy">
+      <figcaption>Great Chaitya, Karla Caves — CC BY-SA 2.0. <a href="https://commons.wikimedia.org/wiki/File:Karla_caves_Chaitya.jpg" target="_blank" rel="noopener">Source</a></figcaption>
+    </figure>
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Karla%20Caves%20Great%20Chaitya%20Left%20pillar%20No9.jpg" alt="Inscribed pillar at the Karla Caves Great Chaitya." loading="lazy">
+      <figcaption>Inscribed pillar, Karla — CC BY 3.0. <a href="https://commons.wikimedia.org/wiki/File:Karla_Caves_Great_Chaitya_Left_pillar_No9.jpg" target="_blank" rel="noopener">Source</a></figcaption>
+    </figure>
+  </div>
+
+  <p><em>Setthi</em> is the term — the root of the modern Indian "seth" — for a guild-master, banker, or wealthy merchant, and Vejayanti is Vaijayanti, the very name by which Banavasi was known in this period. A merchant from this inland Karnataka town had, by the first century CE, accumulated enough capital to fund the completion of one of the great religious monuments of the age, in a city hundreds of kilometres from his own, alongside Yavana — Greek and West Asian — donors making gifts of their own.<sup class="note" data-note="13">[13]</sup></p>
+
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Karli%20Chaitya%20section%20in%20perspective.jpg" alt="Historical engraving of a cross-section of the Karla Chaitya hall." loading="lazy">
+    <figcaption>19th-century engraving, Karla Chaitya cross-section — public domain. <a href="https://commons.wikimedia.org/wiki/File:Karli_Chaitya_section_in_perspective.jpg" target="_blank" rel="noopener">Source</a></figcaption>
+  </figure>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">V.</div>
+  <h2>A Brahmin's rebellion, and a dynasty</h2>
+  <p>Banavasi's political fortunes changed decisively in the mid-fourth century CE, and the story, as the Kadambas themselves chose to tell it in the Talagunda pillar inscription — composed around 450 CE and the most trusted early source for the dynasty's founding — has the shape of a grievance nursed into a kingdom.<sup class="note" data-note="14">[14]</sup> A Brahmin named Mayurasharma, born at Talagunda not far from Banavasi, had travelled to Kanchipuram, the great Pallava capital, to complete his Vedic studies. There, by the inscription's account, a Pallava horseman insulted him — aimed at his caste rather than his person. Mayurasharma did not return to his books. He abandoned scholarship for the sword, gathered the support of forest peoples along the Karnataka frontier, and fought a guerrilla campaign against Pallava frontier forces until the Pallavas, unable to crush him outright, chose instead to recognise him.<sup class="note" data-note="15">[15]</sup></p>
+
+  <p>Mayurasharma made Banavasi his capital, inheriting a town whose trade infrastructure, coinage, and regional prestige had already been built by dynasties before him, and grafted a new royal lineage onto old commercial foundations.<sup class="note" data-note="16">[16]</sup></p>
+
+  <p>His successors did not squander the position. Kakusthavarma, who ruled in the first half of the fifth century, pursued a strategy of dynastic marriage so successful that his daughters married into the Gupta and Vakataka royal houses — meaning that within roughly a century of its founding on the strength of a caste insult and a forest rebellion, this Deccan hill-town dynasty was intermarrying with the most powerful empire in North India.<sup class="note" data-note="17">[17]</sup> Ravivarma, who followed, extended the kingdom's reach north to the Narmada and cultivated a court remembered for its patronage of dance, music, and drama.<sup class="note" data-note="18">[18]</sup></p>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">VI.</div>
+  <h2>Life along the river</h2>
+  <p>What did it mean to live in Banavasi at the height of Kadamba rule? The inscriptions describe a society organised in nested administrative units — districts called <em>vishaya</em>, subdivided into smaller <em>mahagrama</em> and <em>dashagrama</em> groupings — and an economy resting on the twin pillars of grain and cattle, worked by a landholding peasant class known as the Gavundas.<sup class="note" data-note="19">[19]</sup> Trade itself was itemised and taxed with a precision that tells its own story: a transit levy called <em>perjunka</em> on goods in motion, a sales tax called <em>bilkoda</em>, a land tax called <em>kirukula</em>, and even a specific duty, <em>pannaya</em>, on betel leaf.<sup class="note" data-note="20">[20]</sup></p>
+
+  <p>The region's most distinctive commemorative practice, the hero stone or <em>virgal</em> — carved memorials to warriors who died defending cattle or territory, of which more than 2,650 survive from this era in Karnataka alone — testifies to a martial economy built around the protection of livestock and grazing land as much as around trade goods.<sup class="note" data-note="21">[21]</sup> Religiously, the picture was genuinely plural: the Kadambas patronised Shaivism as a family cult, yet funded Jain basadis and Buddhist viharas alongside it, while terracotta folk figurines and inscribed Naga stones — cousins of Sivaskanda Nagasri's serpent — show older worship persisting beneath the newer state religions.<sup class="note" data-note="22">[22]</sup> The Kadambas are also credited with originating a distinctive regional temple form, the stepped, pyramidal Kadamba Shikara tower, whose oldest surviving example stands at Halasi.<sup class="note" data-note="23">[23]</sup></p>
+
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Halmidi%20inscription4.png" alt="The Halmidi inscription, the oldest known Kannada-language inscription." loading="lazy">
+    <figcaption>Halmidi inscription, c. 450 CE — CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Halmidi_inscription4.png" target="_blank" rel="noopener">Source</a></figcaption>
+  </figure>
+
+  <p>And in the inscriptions themselves, language quietly performs its own revolution. The earliest Kadamba records are in Sanskrit and Prakrit, following convention; but by the mid-fifth century, Kannada begins to surface in the epigraphic record — most famously in the Halmidi inscription of around 450 CE, with an even earlier claimant, the Talagunda lion balustrade inscription dated to 370 CE, now argued by some scholars to be the oldest surviving Kannada inscription of all.<sup class="note" data-note="24">[24]</sup> A dynasty founded on a Sanskrit-speaking Brahmin's grievance ended up presiding over the moment a regional vernacular first claimed the permanence of stone.</p>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="chapter fade-in">
+  <div class="chapter-num mono">VII.</div>
+  <h2>Afterward</h2>
+  <p>The Kadambas did not last, in the way that no dynasty in this story ultimately lasts. Around 540 CE, weakened by succession disputes that had already seen one ruler murdered by a rival branch of his own family, the kingdom was absorbed by the rising power of the Chalukyas of Badami.<sup class="note" data-note="25">[25]</sup> Individual Kadamba lineages persisted for centuries afterward as feudatories in Goa, Hangal, and Halasi — demoted from sovereigns to subordinates, but not erased.<sup class="note" data-note="26">[26]</sup> A Chinese pilgrim named Xuanzang, travelling through the peninsula around 640 CE, recorded visiting a kingdom he called Konkanapura, describing its magnificent stupas and monasteries — though the identification of this Konkanapura with Banavasi is disputed among historians, one proposal among several competing candidates, not a settled fact.<sup class="note" data-note="27">[27]</sup></p>
+
+  <p>What did outlast the dynasty, more reliably than any single ruler's memory, was the town's function. Long after the Kadambas were a subordinate footnote to someone else's empire, Banavasi's position at the mouth of the Ghats and on the banks of the Varada continued to matter to whoever ruled the region next — because the mountains had not moved, and the river had not moved, and the passes that a Chutu customs officer and a Kadamba tax-collector had both taxed in their turn were still, centuries later, the only sensible way to get a caravan from the coast to the interior.</p>
+
+  <blockquote>Dynasties rise and are absorbed. Geography, and the wealth that geography compels to move along fixed lines, proves considerably more patient.</blockquote>
+</section>
+
+<section id="notes" class="fade-in">
+  <div class="chapter" style="padding-top:5rem;">
+    <h2 class="mono">Notes</h2>
+    <ol id="notes-list">
+      <li id="n1">On Sivaskanda Nagasri's inscribed Naga stone and her father Haritiputra Vinhukada Chutukulananda Satakarni, recorded in situ near the Madhukeshwara temple, Banavasi.</li>
+      <li id="n2">The "jala-durga" (water-fort) description of Banavasi is attributed to court poetry associated with the Chalukya emperor Pulakeshin II's era.</li>
+      <li id="n3">Archaeological evidence of Mesolithic tools, Iron Age megalithic burials, and early-centuries-CE brick apsidal structures and fortification remains at the Banavasi site.</li>
+      <li id="n4">The <em>Mahavamsa</em> (Sri Lankan Pali chronicle) records Ashoka dispatching the monk Rakshita as a Buddhist missionary to the region associated with Banavasi, c. 242 BCE.</li>
+      <li id="n5">On Chutu dynasty rule at Banavasi, c. 125–345 CE, as Satavahana feudatories.</li>
+      <li id="n6">Claudius Ptolemy, <em>Geography</em> (c. 150 CE), listing "Banaouasei" among Deccan interior settlements.</li>
+      <li id="n7">On the succession of names for the site — Vanavasaka, Vaijayanti, Banaouasei, Jayantipura, Konkanapura, Banavasi.</li>
+      <li id="n8">On the Western Ghats passes near Banavasi (modern Devimane and Arbail routes linking Sirsi to Kumta) as the natural crossing points between coast and interior.</li>
+      <li id="n9">On the Varada River's role in local transport and irrigation around Banavasi, distinct from the overland pass routes used for long-distance trade.</li>
+      <li id="n10">The <em>Periplus of the Erythraean Sea</em> (1st century CE), an anonymous Greek merchant's guide describing goods traded via western Indian coastal ports.</li>
+      <li id="n11">On coin and pottery finds at/near Banavasi: Satavahana lead coinage, punch-marked silver coins, a Roman coin mould bearing Tiberius's design, Arretine Ware fragments, and Rouletted Ware.</li>
+      <li id="n12">Karla Caves veranda inscription (1st century CE), recording the gift of "Seth Bhutapala, from Vejayanti" — Vejayanti/Vaijayanti being the ancient name for Banavasi, per the identification advanced by the epigraphist J.F. Fleet.</li>
+      <li id="n13">On other donors at Karla, including the Yavana merchant Sihadhaya of Dhenukataka, illustrating the site's cosmopolitan patronage base.</li>
+      <li id="n14">The Talagunda pillar inscription (c. 450 CE) as the principal early source for the Kadamba founding narrative.</li>
+      <li id="n15">On Mayurasharma's account of Vedic study at Kanchipuram, conflict with Pallava forces, and eventual recognition as ruler.</li>
+      <li id="n16">On Mayurasharma establishing Banavasi as the Kadamba capital.</li>
+      <li id="n17">On Kakusthavarma's marriage alliances with the Gupta and Vakataka dynasties, first half of the 5th century CE.</li>
+      <li id="n18">On Ravivarma's reign, territorial extension to the Narmada, and patronage of the arts.</li>
+      <li id="n19">On Kadamba administrative divisions (vishaya, mahagrama, dashagrama) and the Gavunda landholding class, drawn from inscriptional evidence.</li>
+      <li id="n20">On itemised Kadamba-era taxation categories — perjunka, bilkoda, kirukula, pannaya — documented in inscriptional research on Kadamba administration.</li>
+      <li id="n21">On the prevalence of hero stones (virgal) in Karnataka from the 5th–12th centuries CE.</li>
+      <li id="n22">On Kadamba religious patronage across Shaivism, Jainism, and Buddhism, alongside continuing folk worship evidenced by terracotta figurines and Naga stones.</li>
+      <li id="n23">On the Kadamba Shikara temple architectural style and the Halasi temple as its oldest surviving example.</li>
+      <li id="n24">On the emergence of Kannada in the epigraphic record — the Halmidi inscription (c. 450 CE) and the Talagunda lion balustrade inscription (dated to 370 CE).</li>
+      <li id="n25">On the Kadamba kingdom's absorption by the Chalukyas of Badami, c. 540 CE, following internal succession conflict.</li>
+      <li id="n26">On surviving Kadamba feudatory branches in Goa, Hangal, and Halasi after the 6th century CE.</li>
+      <li id="n27">On Xuanzang's 7th-century account of "Konkanapura" and the disputed scholarly identification of this location with Banavasi (proposed by St. Martin; alternative sites proposed by Cunningham, Fergusson, and Burgess).</li>
+    </ol>
+  </div>
+</section>
+
+<footer class="site">
+  <p>Essay I of IV in a series on the trade cities of medieval Karnataka. Next: Aihole.</p>
+  <p>Photographs and maps credited individually above; all via Wikimedia Commons (CC-licensed or public domain) and OpenStreetMap (ODbL). Schematic route diagram is original artwork for this piece.</p>
+</footer>
+
+<script>
+  // scroll progress — river rail + mobile top bar
+  const fg = document.getElementById('river-path-fg');
+  const bar = document.getElementById('top-progress');
+  const len = fg ? fg.getTotalLength() : 3000;
+  if (fg) { fg.style.strokeDasharray = len; fg.style.strokeDashoffset = len; }
+
+  function onScroll(){
+    const doc = document.documentElement;
+    const scrolled = doc.scrollTop;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? scrolled / max : 0;
+    if (fg) fg.style.strokeDashoffset = String(len * (1 - pct));
+    if (bar) bar.style.width = (pct * 100) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // fade-in on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+  // footnote jump + flash
+  document.querySelectorAll('sup.note').forEach(sup=>{
+    sup.addEventListener('click', ()=>{
+      const id = 'n' + sup.dataset.note;
+      const target = document.getElementById(id);
+      if(target){
+        target.scrollIntoView({behavior:'smooth', block:'center'});
+        target.classList.add('flash');
+        setTimeout(()=>target.classList.remove('flash'), 1600);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
