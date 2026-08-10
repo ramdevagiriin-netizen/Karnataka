@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>One Empire, Six Modern States</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF; --paper-2:#F2F2F2; --ink:#000000; --ink-soft:#222222;
+    --indigo:#233A54; --ember:#9C4A24; --moss:#4E6B54; --gold:#A5793A; --rule:rgba(35,31,24,0.26);
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light; background-color:var(--paper);}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--paper);
+    background-image: none;
+    color:var(--ink) !important; font-family:'Crimson Text', serif; line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1140px; margin:0 auto; padding:56px 28px 90px;}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ember); font-weight:600; display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--ember); display:inline-block;}
+  h1{font-family:'Cormorant Garamond'; font-weight:700; font-style:italic; font-size:clamp(34px,5.4vw,58px); line-height:1.05; margin:14px 0 6px;}
+  h1 em{font-style:normal; color:var(--ember);}
+  .sub{font-size:19px; max-width:740px; color:var(--ink-soft); margin:8px 0 0;}
+  .intro{max-width:780px; font-size:17px; color:var(--ink-soft); margin-top:22px;}
+  .divider{height:1px; background:repeating-linear-gradient(90deg, var(--rule) 0 6px, transparent 6px 12px); margin:40px 0 36px;}
+
+  .map-section{display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:start;}
+  @media (max-width:900px){ .map-section{grid-template-columns:1fr;} }
+  .map-card{background:var(--paper-2); border:1px solid var(--rule); padding:16px; position:relative;}
+  .map-card::before{content:""; position:absolute; inset:7px; border:1px solid rgba(35,31,24,0.16); pointer-events:none;}
+  .map-title{font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); display:flex; justify-content:space-between; padding:4px 6px 10px;}
+  svg{display:block; width:100%; height:auto;}
+  .legend{display:flex; flex-wrap:wrap; gap:16px; padding:12px 8px 4px; font-family:'IBM Plex Mono'; font-size:10.5px; color:var(--ink-soft);}
+  .legend-item{display:flex; align-items:center; gap:6px;}
+  .sw-dot{width:9px;height:9px;border-radius:50%; display:inline-block;}
+  .sw-line{width:20px;height:0;display:inline-block;}
+
+  .side h3{font-family:'Cormorant Garamond'; font-style:italic; font-weight:600; font-size:22px; margin:0 0 10px;}
+  .side p{font-size:16.5px; color:var(--ink-soft); margin:0 0 14px;}
+  .side .tag{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:6px;}
+
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--rule); border-left:1px solid var(--rule); margin-top:44px;}
+  @media (max-width:760px){ .grid3{grid-template-columns:1fr;} }
+  .pcard{border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:20px 22px;}
+  .pcard .k{font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--moss); margin-bottom:6px; display:block;}
+  .pcard .k.inferred{color:var(--ember);}
+  .pcard h4{font-family:'Cormorant Garamond'; font-weight:700; font-size:20px; margin:0 0 6px;}
+  .pcard p{font-size:15.5px; color:var(--ink-soft); margin:0;}
+
+  .placeholder{margin-top:40px; border:1px dashed var(--rule); padding:16px 20px; font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); display:flex; align-items:center; gap:10px;}
+  .placeholder .dot{width:7px;height:7px;border-radius:50%;background:var(--ember); flex-shrink:0;}
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--rule); font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Callout — Geography &amp; Extent</div>
+  <h1>One Empire,<br><em>Six Modern States</em></h1>
+  <p class="sub">The Rashtrakuta empire, at its widest reach, spanned territory that today belongs to six separate Indian states — plus its ports, its ambitions, and the mountain passes that made moving anything between coast and capital possible at all.</p>
+
+  <div class="intro">
+    <p>The map below is a schematic, not a survey — built from approximate coordinates, not period cartography (none survives) or modern GIS boundary data. Its purpose is orientation: to show, at a glance, how much of what is now separately governed as Gujarat, Maharashtra, Karnataka, Telangana, Andhra Pradesh, and Tamil Nadu once answered, in some form, to a single capital at Manyakheta.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="map-section">
+    <div class="map-card">
+      <div class="map-title"><span>APPROXIMATE EXTENT &amp; KEY SITES</span><span>SCHEMATIC — NOT TO SURVEY</span></div>
+
+      <svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+        <!-- rough empire extent, Narmada-ish north to Kaveri-ish south, coast to Warangal-ish east -->
+        <path d="M 300,180 L 560,150 L 700,220 L 740,420 L 700,600 L 660,700 L 600,760 L 480,600 L 400,500 L 340,420 L 300,320 Z"
+              fill="rgba(165,121,58,0.16)" stroke="rgba(165,121,58,0.5)" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+        <!-- coastline hint (west coast, schematic) -->
+        <path d="M 260,270 Q 300,340 340,420 Q 380,500 420,585 Q 450,650 480,720"
+              fill="none" stroke="rgba(78,107,84,0.55)" stroke-width="1.5"/>
+
+        <!-- Western Ghats spine (schematic) -->
+        <path d="M 300,300 Q 340,380 380,420 Q 420,470 448,576"
+              fill="none" stroke="rgba(35,31,24,0.35)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+
+        <!-- state labels -->
+        <g font-family="IBM Plex Mono" font-size="12" fill="rgba(35,31,24,0.45)" letter-spacing="0.05em">
+          <text x="240" y="265">GUJARAT</text>
+          <text x="460" y="380">MAHARASHTRA</text>
+          <text x="460" y="540">KARNATAKA</text>
+          <text x="648" y="432">TELANGANA</text>
+          <text x="740" y="494">ANDHRA PRADESH</text>
+          <text x="625" y="700">TAMIL NADU</text>
+          <text x="620" y="227">MADHYA PRADESH</text>
+        </g>
+
+        <!-- Ghat passes -->
+        <g>
+          <circle cx="380" cy="376.9" r="5" fill="#4E6B54"/>
+          <circle cx="368.6" cy="413.2" r="5" fill="#4E6B54"/>
+          <circle cx="448.6" cy="575.5" r="5" fill="#4E6B54"/>
+          <text x="392" y="373" font-family="Cormorant Garamond" font-weight="700" font-size="13" fill="#231F18">Thal Ghat</text>
+          <text x="380" y="425" font-family="Cormorant Garamond" font-weight="700" font-size="13" fill="#231F18">Bhor Ghat</text>
+          <text x="460" y="572" font-family="Cormorant Garamond" font-weight="700" font-size="13" fill="#231F18">Devimane / Arbail</text>
+        </g>
+
+        <!-- Ports: known (solid moss) vs inferred (dashed ember) -->
+        <g>
+          <circle cx="333.7" cy="387.3" r="6" fill="#4E6B54"/>
+          <text x="345" y="384" font-family="Cormorant Garamond" font-weight="700" font-size="14">Sopara</text>
+          <circle cx="344" cy="395.6" r="6" fill="#4E6B54"/>
+          <text x="345" y="418" font-family="Cormorant Garamond" font-weight="700" font-size="14">Thana</text>
+          <circle cx="341.7" cy="420.5" r="6" fill="#4E6B54"/>
+          <text x="278" y="440" font-family="Cormorant Garamond" font-weight="700" font-size="14">Chaul</text>
+          <circle cx="402.9" cy="544.7" r="6" fill="#9C4A24" stroke="#9C4A24" stroke-dasharray="2 2" fill-opacity="0.3"/>
+          <text x="415" y="548" font-family="Cormorant Garamond" font-weight="700" font-size="14">Sindabur (Goa)</text>
+          <circle cx="428.6" cy="583.6" r="6" fill="#9C4A24" stroke="#9C4A24" stroke-dasharray="2 2" fill-opacity="0.3"/>
+          <text x="440" y="587" font-family="Cormorant Garamond" font-weight="700" font-size="14">Honnavar (Naoura?)</text>
+        </g>
+
+        <!-- Capital -->
+        <circle cx="568.6" cy="472.4" r="9" fill="#231F18"/>
+        <circle cx="568.6" cy="472.4" r="15" fill="none" stroke="#231F18" stroke-width="1"/>
+        <text x="568.6" y="503" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-style="italic" font-size="17">Manyakheta</text>
+
+        <!-- Reach points -->
+        <g>
+          <circle cx="741.1" cy="96.3" r="5" fill="#233A54"/>
+          <text x="753" y="100" font-family="Cormorant Garamond" font-weight="700" font-size="14">Kannauj</text>
+          <circle cx="504.6" cy="243.9" r="5" fill="#233A54"/>
+          <text x="516" y="247" font-family="Cormorant Garamond" font-weight="700" font-size="14">Ujjain</text>
+          <circle cx="728.6" cy="640.0" r="5" fill="#233A54"/>
+          <text x="740" y="644" font-family="Cormorant Garamond" font-weight="700" font-size="14">Kanchi</text>
+          <circle cx="696.6" cy="716.8" r="5" fill="#233A54"/>
+          <text x="708" y="720" font-family="Cormorant Garamond" font-weight="700" font-size="14">Tanjore</text>
+          <circle cx="706.3" cy="774.0" r="5" fill="#233A54"/>
+          <text x="700" y="795" font-family="Cormorant Garamond" font-weight="700" font-size="14">Rameshwaram</text>
+        </g>
+
+        <!-- dashed lines from capital to farthest reach points -->
+        <line x1="568.6" y1="472.4" x2="741.1" y2="96.3" stroke="#233A54" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+        <line x1="568.6" y1="472.4" x2="706.3" y2="774.0" stroke="#233A54" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+      </svg>
+
+      <div class="legend">
+        <div class="legend-item"><span class="sw-dot" style="background:#4E6B54;"></span> known port site</div>
+        <div class="legend-item"><span class="sw-dot" style="background:#9C4A24; opacity:0.5;"></span> inferred / disputed identification</div>
+        <div class="legend-item"><span class="sw-dot" style="background:#233A54;"></span> campaign reach-point (not held territory)</div>
+        <div class="legend-item"><span class="sw-line" style="border-top:5px solid rgba(35,31,24,0.35);"></span> Western Ghats (schematic)</div>
+        <div class="legend-item">shaded zone: approximate core extent</div>
+      </div>
+    </div>
+
+    <div class="side">
+      <span class="tag">Reading the shaded zone</span>
+      <h3>Not a border, a reach</h3>
+      <p>Early medieval Deccan polities didn't hold territory the way a modern state does — the shaded area marks the zone of fairly consistent Rashtrakuta administration and tribute, not a hard, patrolled line. Vengi, on the eastern edge, spent long stretches as a nominally submissive but practically independent Chalukya branch; the Gangas of southern Karnataka were feudatories, governing their own affairs under Rashtrakuta overlordship rather than direct rule.</p>
+      <span class="tag">Reading the reach-points</span>
+      <h3>Campaigns, not conquests</h3>
+      <p>Kannauj, Kanchi, and Rameshwaram were never incorporated — they were reached, fought over, and in Kannauj's case briefly occupied, before the army marched home. The dashed lines mark campaign distance from Manyakheta, not administrative control.</p>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="pcard">
+      <span class="k">Known</span>
+      <h4>Sopara (Sūrpāraka)</h4>
+      <p>The great western port, named directly in the Kuvalayamalakaha's eight-merchant scene and in Arab geographical accounts. Identification is secure.</p>
+    </div>
+    <div class="pcard">
+      <span class="k">Known</span>
+      <h4>Thana &amp; Chaul</h4>
+      <p>Named repeatedly by Arab writers across the ninth and tenth centuries as wealthy, well-established Konkan ports with settled Muslim trading communities.</p>
+    </div>
+    <div class="pcard">
+      <span class="k inferred">Inferred</span>
+      <h4>Sindabur / Goa</h4>
+      <p>Arab-writer "Sindabur" is generally identified with the Goa region, but the identification rests on phonetic and geographic inference, not a confirmed inscription naming the same place under both names.</p>
+    </div>
+    <div class="pcard">
+      <span class="k inferred">Inferred</span>
+      <h4>Naoura / Honnavar</h4>
+      <p>The Periplus's first-century "Naoura" is scholarly consensus-identified with modern Honnavar — a plausible, widely accepted, but still inferential match, centuries before this book's own period.</p>
+    </div>
+    <div class="pcard">
+      <span class="k">Known</span>
+      <h4>Thal &amp; Bhor Ghats</h4>
+      <p>Historically significant passes linking the Konkan coast to the Deccan plateau — the same structural role Devimane and Arbail played further south for Banavasi's own trade in an earlier century.</p>
+    </div>
+    <div class="pcard">
+      <span class="k">Known</span>
+      <h4>Devimane &amp; Arbail</h4>
+      <p>The passes already established in this account's own opening chapters, carrying trade from the Konkan coast up to Banavasi — still functionally relevant to the wider network Manyakheta later inherited.</p>
+    </div>
+  </div>
+
+  <div class="placeholder">
+    <span class="dot"></span>
+    This schematic uses approximate coordinates for orientation only. A properly surveyed version — real GIS boundary data for the empire's shifting extent by reign, plus a fuller port gazetteer — is a natural candidate for a dedicated map commission rather than an SVG sketch.
+  </div>
+
+  <footer>
+    <span>Extent and port identifications drawn from Altekar (1934) and Mishra (1991); modern state overlay for orientation only, not a period concept</span>
+    <span>Callout draft — Manyakheta / Part III</span>
+  </footer>
+
+</div>
+</body>
+</html>

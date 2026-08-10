@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>A Mountain, Carved Downward — Kailasa Temple, Ellora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone: #FFFFFF;
+    --stone-2: #F2F2F2;
+    --ink: #000000;
+    --ink-soft: #222222;
+    --basalt: #2E2A24;
+    --ember: #9C4A24;
+    --moss: #556B4E;
+    --gold: #A5793A;
+    --rule: rgba(38,32,25,0.26);
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light; background-color:var(--stone);}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--stone);
+    background-image: none;
+    color:var(--ink) !important;
+    font-family:'Crimson Text', serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:56px 28px 90px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ember); font-weight:600;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--ember); display:inline-block;}
+  h1{
+    font-family:'Cormorant Garamond', serif; font-weight:700; font-style:italic;
+    font-size:clamp(36px, 5.6vw, 60px); line-height:1.03; margin:14px 0 6px;
+  }
+  h1 em{font-style:normal; color:var(--ember);}
+  .sub{font-size:19px; max-width:700px; color:var(--ink-soft); margin:8px 0 0;}
+  .divider{height:1px; background:repeating-linear-gradient(90deg, var(--rule) 0 6px, transparent 6px 12px); margin:40px 0 36px;}
+
+  .facts{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--rule); border-left:1px solid var(--rule);
+    margin-bottom:44px;
+  }
+  @media (max-width:760px){ .facts{grid-template-columns:repeat(2,1fr);} }
+  .fact{border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:18px 16px;}
+  .fact .n{font-family:'Cormorant Garamond'; font-weight:700; font-size:30px; color:var(--basalt); line-height:1;}
+  .fact .l{font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px;}
+
+  .lead{max-width:760px; font-size:18px; color:var(--ink-soft); margin-bottom:8px;}
+  .lead p + p{margin-top:14px;}
+
+  .panel{
+    margin-top:44px; background:var(--stone-2); border:1px solid var(--rule);
+    padding:26px 28px; position:relative;
+  }
+  .panel::before{content:""; position:absolute; inset:7px; border:1px solid rgba(38,32,25,0.16); pointer-events:none;}
+  .panel h2{font-family:'Cormorant Garamond'; font-style:italic; font-weight:600; font-size:26px; margin:0 0 14px;}
+  .panel p{font-size:17px; color:var(--ink-soft); margin:0 0 12px;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel .tag{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ember); margin-bottom:8px; display:block;}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px;}
+  @media (max-width:760px){ .two-col{grid-template-columns:1fr;} }
+
+  .correction{
+    border-left:3px solid var(--ember); padding-left:18px; margin-top:44px;
+  }
+  .correction .tag{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:8px;}
+  .correction h3{font-family:'Cormorant Garamond'; font-style:italic; font-weight:600; font-size:22px; margin:0 0 8px;}
+  .correction p{font-size:17px; color:var(--ink-soft); margin:0 0 10px;}
+  .correction .old{text-decoration:line-through; color:#9a8f7c;}
+  .correction .new{color:var(--moss); font-weight:600;}
+
+  .quote-block{
+    max-width:760px; margin:44px 0; padding:20px 0 20px 22px; border-left:2px solid var(--gold);
+  }
+  .quote-block p{font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--ink); margin:0; line-height:1.4;}
+  .quote-block .attr{font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); margin-top:10px; font-style:normal;}
+
+  .placeholder{
+    margin-top:56px; border:1px dashed var(--rule); padding:22px 24px;
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft);
+    display:flex; align-items:center; gap:12px;
+  }
+  .placeholder .dot{width:8px; height:8px; border-radius:50%; background:var(--ember); flex-shrink:0;}
+
+  footer{
+    margin-top:56px; padding-top:18px; border-top:1px solid var(--rule);
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Callout — Architecture &amp; Attribution</div>
+  <h1>A Mountain,<br><em>Carved Downward</em></h1>
+  <p class="sub">The Kailasa temple at Ellora is not a building. It is the absence of a building — a monument made entirely by removing rock, starting from the sky.</p>
+
+  <div class="divider"></div>
+
+  <div class="facts">
+    <div class="fact"><div class="n">32m</div><div class="l">height</div></div>
+    <div class="fact"><div class="n">78m</div><div class="l">length</div></div>
+    <div class="fact"><div class="n">47m</div><div class="l">courtyard width, avg.</div></div>
+    <div class="fact"><div class="n">~20yrs</div><div class="l">core excavation</div></div>
+  </div>
+
+  <div class="lead">
+    <p>It was cut, not built. Three great trenches were sunk into the basalt cliff face at Ellora, isolating a single freestanding block of stone, out of which an entire temple — sanctuary, columns, a life-sized elephant, bridges connecting hall to hall — was then carved from the outside in, and from the top down. Nothing was added. Nothing was assembled. Every wall, every bridge, every column had to already exist inside the rock before a single chisel-stroke revealed it — which means there was no room for a mistake to be corrected later by adding material back. The whole design had to be right before the first cut was made.</p>
+    <p>Estimates of the volume of rock removed vary by source — figures from roughly 200,000 tonnes up to over two million tonnes have been cited — but even at the conservative end, this remains one of the largest single acts of rock excavation attempted anywhere in the premodern world, executed with hammer and chisel alone.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <span class="tag">Attribution</span>
+      <h2>Not one king's project</h2>
+      <p>Earlier readings of the temple's stylistic range — different sculptural hands, apparent shifts in treatment across its galleries — led some scholars to assume it had been built up gradually, patron after patron, over generations. More recent study of its iconography and its uniform overall architectural programme has reversed that view: current consensus attributes the temple to a concentrated burst of activity, roughly two decades long, spanning the reigns of <b>Dantidurga and Krishna I</b> in the late eighth century CE — not Krishna I working alone. Later Rashtrakuta kings likely added further halls and shrines into the early ninth century, but the core structure belongs to this single continuous campaign.</p>
+    </div>
+    <div class="panel">
+      <span class="tag">Design as statement</span>
+      <h2>Built to look like a victory</h2>
+      <p>The temple's overall design appears to have been developed directly from the Chalukyas' own Lokeshvara — now Virupaksha — temple at Pattadakal. Scholars read this as deliberate: a Rashtrakuta monument, modelled on the great temple of the very dynasty the Rashtrakutas had just replaced, restaged at a scale the Chalukyas themselves never attempted. The sculptural programme reinforces the same claim throughout, repeatedly choosing scenes of cosmic order successfully upheld — read as a visual argument for Rashtrakuta political ascendancy over the Deccan, not merely religious devotion.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p>"This great sanctuary, occupying an area roughly the same as that of the Parthenon and one and a half times as high, is not a structural temple, but an enormous monolithic rock-carving in architectural form."</p>
+    <div class="attr">— René Grousset, <i>L'Inde</i>, cited in the Basham Photograph Collection, Australian National University Archives</div>
+  </div>
+
+  <div class="panel" style="margin-top:24px;">
+    <span class="tag">Craft and labour</span>
+    <h2>Where the sculptors may have come from</h2>
+    <p>The tall moulded plinth beneath the temple proper — unusually high for a structural temple of this period, likely raised deliberately to let light reach the lower storey — is carved with elephants and lions in a style scholars connect to Pallava sculpture. It has been argued that sculptor guilds from Pallava territory were drawn north to Ellora specifically by Rashtrakuta patronage: skilled labour following royal commissions across dynastic lines, the same way trade routes moved goods across the same political boundaries the temple itself was built to announce.</p>
+  </div>
+
+  <div class="panel" style="margin-top:24px;">
+    <span class="tag">What the evidence doesn't say</span>
+    <h2>No inscription, no names</h2>
+    <p>For a monument this scale, the epistemic humility is worth stating plainly: there is no foundation inscription at the Kailasa temple itself. Every attribution to Dantidurga and Krishna I rests on external evidence — copper-plate grants, the iconographic programme, and, critically, a separate, securely inscribed monument nearby: the Dashavatara cave at the same site, directly linked to Dantidurga by its own inscription, whose sculptural style provides the art-historical bridge to the (uninscribed) Kailasa temple's own carving style. The attribution is strong. It is also, formally, inference — not a signature carved by the builders themselves.</p>
+  </div>
+
+  <div class="placeholder">
+    <span class="dot"></span>
+    More detail to come — additional sourcing on the sculptural programme, the Dashavatara cave inscription itself, and comparative material on Rashtrakuta-era rock-cut technique still to be added.
+  </div>
+
+  <footer>
+    <span>Sources: Grousset/Basham Collection, ANU Archives; MAP Academy Encyclopedia of Art via Asia Research News (2023), citing Goetz 1952, Dhavalikar 1982, Berkson 2004</span>
+    <span>Callout draft — Manyakheta / Part III, Section IV</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Elsewhere, at the Same Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF; --paper-2:#F2F2F2; --ink:#000000; --ink-soft:#222222;
+    --indigo:#233A54; --ember:#9C4A24; --moss:#4E6B54; --rule:rgba(35,31,24,0.26);
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light; background-color:var(--paper);}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(ellipse at 18% 10%, rgba(255,255,255,0.15), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(0,0,0,0.07), transparent 50%),
+      transparent;
+    color:var(--ink) !important; font-family:'Crimson Text', serif; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:56px 28px 90px;}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ember); font-weight:600; display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--ember); display:inline-block;}
+  h1{font-family:'Cormorant Garamond'; font-weight:700; font-style:italic; font-size:clamp(34px,5.4vw,58px); line-height:1.05; margin:14px 0 6px;}
+  h1 em{font-style:normal; color:var(--ember);}
+  .sub{font-size:19px; max-width:720px; color:var(--ink-soft); margin:8px 0 0;}
+  .intro{max-width:760px; font-size:17.5px; color:var(--ink-soft); margin-top:26px;}
+  .intro p+p{margin-top:12px;}
+  .divider{height:1px; background:repeating-linear-gradient(90deg, var(--rule) 0 6px, transparent 6px 12px); margin:44px 0 40px;}
+
+  .era-head{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
+  .era-head h2{font-family:'Cormorant Garamond'; font-style:italic; font-weight:700; font-size:32px; margin:0;}
+  .era-head .range{font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); letter-spacing:0.04em;}
+  .era-sub{font-size:16.5px; color:var(--ink-soft); max-width:700px; margin-bottom:28px;}
+
+  .track{display:grid; grid-template-columns:110px 1fr; gap:0; border-top:1px solid var(--rule);}
+  .row{display:contents;}
+  .row .year{
+    font-family:'IBM Plex Mono'; font-size:13px; font-weight:600; color:var(--indigo);
+    padding:16px 14px 16px 0; border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  .row .content{padding:16px 0; border-bottom:1px solid var(--rule);}
+  .row .content .place{
+    font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--ember); margin-bottom:4px; display:block;
+  }
+  .row .content .place.rome{color:var(--moss);}
+  .row .content .place.const{color:var(--indigo);}
+  .row .content p{margin:0; font-size:16.5px; color:var(--ink-soft);}
+  .row .content b{color:var(--ink);}
+
+  .anchor{
+    margin:34px 0 40px; padding:18px 22px; background:var(--paper-2); border-left:3px solid var(--ember);
+  }
+  .anchor .tag{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:6px;}
+  .anchor p{margin:0; font-size:17px; color:var(--ink-soft);}
+
+  .placeholder{
+    margin-top:20px; border:1px dashed var(--rule); padding:16px 20px;
+    font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft);
+    display:flex; align-items:center; gap:10px;
+  }
+  .placeholder .dot{width:7px; height:7px; border-radius:50%; background:var(--ember); flex-shrink:0;}
+
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--rule); font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Callout — World Context</div>
+  <h1>Elsewhere,<br><em>at the Same Time</em></h1>
+  <p class="sub">Two timelines, set beside the Deccan's own — not because Banavasi, Aihole, or Manyakheta had any contact with these events, almost certainly, but because it is worth remembering what else the same centuries were doing.</p>
+
+  <div class="intro">
+    <p>Nothing below claims a connection. The value is simpler: a reader who already knows Sutton Hoo, or Charlemagne's coronation, or the Viking raid on Lindisfarne, now has a peg to hang an unfamiliar Deccan century on — and a reminder that "ancient India" was not a separate, slower clock. It was ticking at exactly the same rate as Aachen and Constantinople, most of it entirely unaware of the other.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ERA ONE: KADAMBAS / CHALUKYAS -->
+  <div class="era-head">
+    <h2>While the Kadambas and Chalukyas ruled</h2>
+    <span class="range">c. 345 – 753 CE &nbsp;·&nbsp; Parts I–II</span>
+  </div>
+  <p class="era-sub">Mayurasharma's kingdom at Banavasi, Kakusthavarma's Gupta marriages, the rise and fall of the Badami Chalukyas — set against three other courts finding their own footing in the same centuries.</p>
+
+  <div class="track">
+    <div class="row">
+      <div class="year">c. 410</div>
+      <div class="content"><span class="place">England</span><p>Roman legions formally withdraw from Britain. The island fragments into competing Anglo-Saxon kingdoms with no central authority — a process just getting underway as Mayurasharma is founding his own kingdom at Banavasi a world away.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">476</div>
+      <div class="content"><span class="place rome">Rome</span><p>The Western Roman Empire ends when Odoacer deposes the last emperor, Romulus Augustulus — comfortably within the Kadamba dynasty's own lifetime. Rome's bullion, already turning up in Banavasi's soil for three centuries, keeps arriving by other hands for a while yet.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">527–565</div>
+      <div class="content"><span class="place const">Constantinople</span><p>Justinian I codifies Roman law (the <i>Corpus Juris Civilis</i>) and, in 537, dedicates the Hagia Sophia — for nearly a millennium the largest enclosed space in the world. His armies briefly reconquer Italy and North Africa, the last serious attempt to reunite the old Roman Mediterranean.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">c. 610–620s</div>
+      <div class="content"><span class="place">England</span><p>An East Anglian king — most likely Raedwald — is buried with an entire ship and a hoard of gold and garnet at Sutton Hoo, the richest Anglo-Saxon grave ever found. England is still a patchwork of small, competing kings; nothing resembling a unified state exists.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">634</div>
+      <div class="content"><span class="place">Deccan</span><p><b>Anchor point:</b> Ravikirti carves Pulakeshin II's victories into the Meguti temple at Aihole — the same year, by coincidence of a very different calendar, that the early Islamic conquests are just beginning to move out of Arabia into the collapsing edges of both the Byzantine and Sassanid Persian empires.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">636–651</div>
+      <div class="content"><span class="place const">Constantinople / Persia</span><p>Byzantine Syria and Egypt fall to Arab armies; the Sassanid Persian Empire is conquered outright by 651. Two of the four great pre-Islamic powers of the ancient world effectively cease to exist within a single generation.</p></div>
+    </div>
+  </div>
+
+  <div class="anchor">
+    <span class="tag">Worth sitting with</span>
+    <p>When Ravikirti wrote his inscription at Aihole in 634 CE, the Byzantine and Sassanid empires — the two powers that had dominated the Near East for centuries — had, between them, perhaps two decades left before Arab conquest reshaped the map entirely. Aihole's poet had no way of knowing that his own world's near future — a new power sweeping in from an unexpected direction — was already underway three thousand miles to the west.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ERA TWO: RASHTRAKUTAS -->
+  <div class="era-head">
+    <h2>While the Rashtrakutas ruled from Manyakheta</h2>
+    <span class="range">753 – 982 CE &nbsp;·&nbsp; Part III</span>
+  </div>
+  <p class="era-sub">Dantidurga's rise, the carving of Kailasa, five reigns of empire-building — set against a Europe just beginning to reassemble itself, and a Byzantium tearing itself apart over the theology of images.</p>
+
+  <div class="track">
+    <div class="row">
+      <div class="year">726–842</div>
+      <div class="content"><span class="place const">Constantinople</span><p>The Byzantine Iconoclasm controversy: successive emperors ban the veneration of religious images, provoking more than a century of theological and political convulsion that spans nearly the entire Rashtrakuta period — a dispute over how the divine may be depicted, running in parallel with a Deccan dynasty that was, at the same moment, having Shiva carved directly out of a mountainside.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">793</div>
+      <div class="content"><span class="place">England</span><p>Viking raiders sack the monastery at Lindisfarne — the conventional start of the Viking Age. Dhruva is on the Rashtrakuta throne, mid-way through the campaigns that would take him to Kannauj.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">797–802</div>
+      <div class="content"><span class="place const">Constantinople</span><p>Irene, having blinded and deposed her own son, rules the Byzantine Empire alone — the first woman to do so in her own right rather than as a regent. Contemporary Western chroniclers, unable to accept a reigning empress, would claim the Byzantine throne itself was vacant.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">800</div>
+      <div class="content"><span class="place rome">Rome</span><p>Pope Leo III crowns Charlemagne "Emperor of the Romans" in St Peter's Basilica on Christmas Day — the first Western claimant to that title since 476. Govinda III is, in these same years, fighting simultaneous wars on two fronts against the Gangas and the Pallavas.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">802</div>
+      <div class="content"><span class="place rome">Aachen</span><p>An elephant named Abul-Abbas, a gift from the Abbasid caliph Harun al-Rashid, arrives at Charlemagne's court after a journey of years across the Mediterranean and the Alps — the first elephant recorded north of the Alps since antiquity. Some accounts trace the animal's own origin back to India, though this detail is less firmly sourced than the rest of the story.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">867</div>
+      <div class="content"><span class="place const">Constantinople</span><p>Basil I murders his way to the throne and founds the Macedonian dynasty, opening what historians usually call the Byzantine Empire's medieval golden age — running almost exactly alongside Amoghavarsha I's own long, literature-and-religion-focused reign at Manyakheta.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">927</div>
+      <div class="content"><span class="place">England</span><p>Æthelstan becomes the first king to rule a genuinely unified England, taking submission from the rulers of Scotland, Strathclyde, and Wales at Eamont. Indra III is on the Rashtrakuta throne, having just sacked Kannauj.</p></div>
+    </div>
+    <div class="row">
+      <div class="year">976</div>
+      <div class="content"><span class="place const">Constantinople</span><p>Basil II — later called Bulgaroktonos, "the Bulgar-Slayer" — becomes Byzantine emperor at the start of a reign that would take the empire to its greatest medieval extent. In the very same year, the Rashtrakuta empire is entering the final, rapid collapse that ends with Tailapa II's revolt.</p></div>
+    </div>
+  </div>
+
+  <div class="anchor">
+    <span class="tag">Worth sitting with</span>
+    <p>Charlemagne's coronation in 800 and Govinda III's simultaneous two-front war are near-exact contemporaries — two rulers, on opposite sides of the known world, both in the business of building an empire out of what had until recently been a collection of rival warlords, neither aware the other existed.</p>
+  </div>
+
+  <div class="placeholder">
+    <span class="dot"></span>
+    Baghdad and the wider Abbasid world deliberately held back here — genuinely relevant (Harun al-Rashid's reign runs almost exactly alongside Dhruva and Govinda III, and the Abbasid court is the same one Sulaiman al-Tajir sailed out of) but large enough to deserve its own callout rather than a squeezed-in row. More rows for both eras to come as sourcing allows.
+  </div>
+
+  <footer>
+    <span>Dates cross-checked against standard reference chronologies; the Abul-Abbas origin claim flagged as lower-confidence per source variance.</span>
+    <span>Callout draft — for Parts I–II and Part III</span>
+  </footer>
+
+</div>
+</body>
+</html>

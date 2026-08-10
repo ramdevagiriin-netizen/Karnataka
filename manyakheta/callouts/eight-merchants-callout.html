@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Eight Merchants, Eight Horizons — Sopāraka, 779 CE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #FFFFFF;
+    --paper-2: #F2F2F2;
+    --ink: #000000;
+    --ink-soft: #222222;
+    --indigo: #223B54;
+    --oxide: #A03A26;
+    --brass: #9C6B1F;
+    --teal: #3E6B5E;
+    --rule: rgba(42,33,22,0.28);
+    --max-w: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light; background-color:var(--paper);}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.15), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(0,0,0,0.06), transparent 50%),
+      transparent;
+    color:var(--ink) !important;
+    font-family:'Crimson Text', serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:56px 28px 90px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oxide);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--oxide);
+    display:inline-block;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:clamp(38px, 6vw, 66px);
+    line-height:1.02;
+    margin:14px 0 6px;
+    color:var(--ink) !important;
+    letter-spacing:0.002em;
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--oxide);
+  }
+  .sub{
+    font-family:'Crimson Text', serif;
+    font-size:19px;
+    max-width:680px;
+    color:var(--ink-soft);
+    margin:8px 0 0;
+  }
+  .intro{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width:760px;
+  }
+  .intro p{
+    font-size:18px;
+    margin:0;
+    color:var(--ink-soft);
+  }
+  .intro p .cite{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--indigo);
+  }
+  .divider{
+    height:1px;
+    background:repeating-linear-gradient(90deg, var(--rule) 0 6px, transparent 6px 12px);
+    margin:46px 0 40px;
+  }
+
+  /* ---- diagram section ---- */
+  .diagram-section{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:40px;
+    align-items:start;
+  }
+  @media (max-width: 920px){
+    .diagram-section{grid-template-columns:1fr;}
+  }
+  .chart-card{
+    background: var(--paper-2);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:18px 18px 8px;
+    position:relative;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 30px rgba(42,33,22,0.08);
+  }
+  .chart-card::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px solid rgba(42,33,22,0.18);
+    pointer-events:none;
+  }
+  .chart-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    padding:4px 8px 10px;
+  }
+  svg{display:block; width:100%; height:auto;}
+
+  .legend{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    padding:10px 12px 16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .legend-item{display:flex; align-items:center; gap:7px;}
+  .swatch-line{width:22px; height:0; border-top:2px dashed var(--brass);}
+  .swatch-line.sea{border-top:2px solid var(--oxide);}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--indigo); display:inline-block;}
+
+  .side-note{
+    font-family:'Crimson Text', serif;
+    font-size:16.5px;
+    color:var(--ink-soft);
+    padding-top:6px;
+  }
+  .side-note h3{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:23px;
+    color:var(--ink) !important;
+    margin:0 0 10px;
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:14px;
+    margin:22px 0 6px;
+  }
+  .stat{
+    border-left:2px solid var(--oxide);
+    padding-left:12px;
+  }
+  .stat .n{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1;
+    color:var(--indigo);
+  }
+  .stat .l{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  /* ---- testimony grid ---- */
+  .testimony-head{
+    margin-top:64px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .testimony-head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:30px;
+    margin:0;
+  }
+  .testimony-head .cite{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  .grid{
+    margin-top:26px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-left:1px solid var(--rule);
+  }
+  @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    border-right:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:24px 26px 22px;
+    position:relative;
+  }
+  .card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--oxide);
+    letter-spacing:0.06em;
+  }
+  .card .dest{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:24px;
+    margin:4px 0 2px;
+    color:var(--ink) !important;
+  }
+  .card .mode{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:12px;
+  }
+  .card .mode.sea{color:var(--oxide);}
+  .card blockquote{
+    margin:0 0 12px;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ink-soft);
+    padding-left:14px;
+    border-left:2px solid var(--rule);
+  }
+  .card .cargo{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+  }
+  .card .cargo b{color:var(--indigo); font-weight:600;}
+
+  .closing{
+    max-width:760px;
+    margin:56px auto 0;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+  .closing p + p{ margin-top:14px; }
+
+  footer{
+    margin-top:60px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Callout — Trade &amp; Logistics</div>
+  <h1>Eight Merchants,<br><em>Eight Horizons</em></h1>
+  <p class="sub">A single guild reception at Sopāraka, preserved almost by accident in a Prakrit romance, records eight traders describing — in their own words — where they had just been, and what they carried each way.</p>
+
+  <div class="intro">
+    <p>Sūrpāraka — Sopara — was already old by the time this scene takes place. Buddhist tradition places a visit by the Buddha himself here, and whatever the truth of that legend, the port's antiquity is not in doubt: it is the only site on India's western coast to have yielded a confirmed edict of Ashoka, dating its importance back to the third century BCE, and by the first century CE it appears in the <em>Periplus of the Erythraean Sea</em> — the Greek merchant's handbook to the Indian Ocean — as one of the coast's principal harbours, already trading with Mesopotamia, Egypt, Arabia, Rome, and the East African coast centuries before any Rashtrakuta king existed to tax it. Ptolemy, writing his own <em>Geography</em> not long after, places a "Supara" in almost exactly the same spot. The town Uddyotanasūri\'s guild hall stood in, in other words, had already been an international port for the better part of a thousand years.</p>
+    <p>Nothing of that harbour survives today. The site is identified with modern <b>Nala Sopara</b>, in Palghar district, now a crowded suburb of the Mumbai Metropolitan Region reached by its own station on the Western Railway line. The creek that once connected the port to the sea, running between the Vaitarna river to the north and the Ulhas/Vasai creek to the south, has silted into mudflat over the centuries since; what remains on the ground is a scatter of protected archaeological mounds and a Buddhist stupa, rather than anything resembling a working harbour. A visitor today has to imagine the ships.</p>
+    <p>In 779 CE, at Jāwālipur (modern Jālor, Rajasthan), the Jain monk Uddyotanasūri completed the <em>Kuvalayamālākahā</em>. Buried inside its narrative is a scene set at Sūrpāraka, where a guild held its customary reception for a merchant returning from abroad. <span class="cite">One by one, eight travellers spoke</span>, each naming where he had gone and what he had brought home. It is, by accident of genre, one of the most direct surviving accounts of how trade actually moved in the eighth-century Deccan — not a king's boast carved in stone, but eight men comparing notes, in a port that had already been listening to such stories for a millennium.</p>
+    <p>What the eight accounts show, set side by side, is the sheer logistical range a single western port had to coordinate at once: slow overland caravans returning from the interior of the subcontinent, and ocean voyages reaching as far as the Persian Gulf, the African coast, Sumatra, and China — all converging, in the same hall, on the same evening.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="diagram-section">
+    <div class="chart-card">
+      <div class="chart-title"><span>SŪRPĀRAKA — EIGHT ROUTES OUTWARD</span><span>KUVALAYAMĀLĀKAHĀ, 779 CE</span></div>
+
+      <svg viewBox="0 0 940 780" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4"><circle cx="4" cy="4" r="3.2" fill="#223B54"/></marker>
+        </defs>
+
+        <!-- compass ticks -->
+        <g stroke="rgba(42,33,22,0.18)" stroke-width="1">
+          <circle cx="400" cy="400" r="120" fill="none"/>
+          <circle cx="400" cy="400" r="170" fill="none"/>
+          <circle cx="400" cy="400" r="220" fill="none"/>
+          <circle cx="400" cy="400" r="270" fill="none"/>
+        </g>
+        <!-- ring-distance key, tucked into the empty wedge between Ratnadvipa and Barbaricum -->
+        <g font-family="IBM Plex Mono" font-size="9.5" fill="rgba(42,33,22,0.5)" text-anchor="end">
+          <text x="308" y="482">short</text>
+          <text x="271" y="516">mid</text>
+          <text x="235" y="550">long</text>
+          <text x="198" y="584">far</text>
+        </g>
+
+        <!-- routes: overland dashed brass, sea solid oxide -->
+        <!-- 1 Uttarapatha (overland, mid-long) -->
+        <line x1="400" y1="400" x2="429.5" y2="232.6" stroke="#9C6B1F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dot)"/>
+        <!-- 2 Assam / Eastern country (overland, long) -->
+        <line x1="400" y1="400" x2="588.4" y2="268.1" stroke="#9C6B1F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dot)"/>
+        <!-- 3 Kosala (overland, short-mid) -->
+        <line x1="400" y1="400" x2="537.9" y2="375.7" stroke="#9C6B1F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dot)"/>
+        <!-- 4 China / Mahachina (sea, far) -->
+        <path d="M400,400 Q 540,380 669,423.5" fill="none" stroke="#A03A26" stroke-width="2" marker-end="url(#dot)"/>
+        <!-- 5 Suvarnadvipa / Sumatra (sea, far) -->
+        <path d="M400,400 Q 520,460 625.2,530" fill="none" stroke="#A03A26" stroke-width="2" marker-end="url(#dot)"/>
+        <!-- 6 Ratnadvipa / Sri Lanka (sea, long) -->
+        <path d="M400,400 Q 430,500 451.8,593.2" fill="none" stroke="#A03A26" stroke-width="2" marker-end="url(#dot)"/>
+        <!-- 7 Barbaricum / Sindh coast (sea, mid) — respaced to 290deg -->
+        <path d="M400,400 Q 300,365 221.5,335" fill="none" stroke="#A03A26" stroke-width="2" marker-end="url(#dot)"/>
+        <!-- 8 Dvaravati (overland/coastal, short) — respaced to 345deg -->
+        <line x1="400" y1="400" x2="368.9" y2="284.1" stroke="#9C6B1F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dot)"/>
+
+        <!-- centre: Sopara -->
+        <circle cx="400" cy="400" r="9" fill="#2A2116"/>
+        <circle cx="400" cy="400" r="15" fill="none" stroke="#2A2116" stroke-width="1"/>
+        <text x="400" y="437" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-style="italic" font-size="19" fill="#2A2116">Sūrpāraka</text>
+        <text x="400" y="454" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#4A3E2C">the guild hall</text>
+
+        <!-- labels -->
+        <g font-family="Cormorant Garamond" font-weight="700" font-size="16.5" fill="#2A2116">
+          <text x="438" y="222">Uttarāpatha</text>
+          <text x="596" y="256">Eastern Country</text>
+          <text x="546" y="367">Kosala</text>
+          <text x="681" y="414">China · Mahāchīna</text>
+          <text x="633" y="518">Suvarṇadvīpa</text>
+          <text x="410" y="618">Ratnadvīpa</text>
+          <text x="120" y="330">Barbaricum</text>
+          <text x="150" y="348" font-size="13" font-style="italic" font-weight="500">(Sindh coast)</text>
+          <text x="376" y="278">Dvāravatī</text>
+        </g>
+        <g font-family="IBM Plex Mono" font-size="10" fill="#4A3E2C">
+          <text x="438" y="240">out: betel-nuts → in: horses</text>
+          <text x="596" y="274">out: pearls → in: fly-whisks</text>
+          <text x="546" y="384">out: horses → in: an elephant</text>
+          <text x="681" y="432">out: buffaloes, deer → in: silk</text>
+          <text x="633" y="536">out: pālāsa flowers → in: gold</text>
+          <text x="410" y="636">out: nimba leaves → in: gems</text>
+          <text x="120" y="366">out: fabrics → in: pearls, ivory</text>
+          <text x="376" y="296">out: — → in: conch-shells</text>
+        </g>
+      </svg>
+
+      <div class="legend">
+        <div class="legend-item"><span class="swatch-line"></span> overland caravan</div>
+        <div class="legend-item"><span class="swatch-line sea"></span> sea route</div>
+        <div class="legend-item"><span class="dot"></span> Sūrpāraka, the port of departure and return</div>
+        <div class="legend-item">rings mark relative distance, short → far</div>
+      </div>
+    </div>
+
+    <div class="side-note">
+      <h3>What one evening's talk reveals</h3>
+      <p>No single merchant in this scene had travelled the whole network. Each had followed one leg of it — a caravan north, a ship south, a monsoon crossing east — and the guild hall was where those separate journeys were pooled into a single, legible picture of what the port actually connected to. That pooling was the guild's real function: no one trader could hold this map in his head alone.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="n">4</div><div class="l">overland routes</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">sea routes</div></div>
+        <div class="stat"><div class="n">8</div><div class="l">distinct commodities returned</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">port, common to all</div></div>
+      </div>
+      <p style="margin-top:20px; font-size:15px; color:var(--ink-soft);">Distances and bearings are schematic, drawn to the approximate real geography of each named place, not to a period source map — the <em>Kuvalayamālākahā</em> itself gives directions, not measured distances.</p>
+    </div>
+  </div>
+
+  <div class="testimony-head">
+    <h2>The eight, in their own words</h2>
+    <div class="cite">as rendered by Uddyotanasūri, 779 CE</div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="num">I</div>
+      <div class="dest">Kosala</div>
+      <div class="mode">overland</div>
+      <blockquote>&ldquo;I went to Kosala with a troop of horses, and brought back an elephant in exchange.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>horses</b> &nbsp;→&nbsp; Back: <b>an elephant</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">II</div>
+      <div class="dest">Uttarāpatha</div>
+      <div class="mode">overland</div>
+      <blockquote>&ldquo;I went to Uttarāpatha with betel-nuts, and brought back horses in exchange.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>betel-nuts</b> &nbsp;→&nbsp; Back: <b>horses</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">III</div>
+      <div class="dest">The Eastern Country <span style="font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);">(probably Assam)</span></div>
+      <div class="mode">overland</div>
+      <blockquote>&ldquo;I went to the eastern country with pearls, and brought fly-whisks.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>pearls</b> &nbsp;→&nbsp; Back: <b>fly-whisks</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">IV</div>
+      <div class="dest">Dvāravatī</div>
+      <div class="mode">overland / coastal</div>
+      <blockquote>&ldquo;I went to Dvāravatī, and brought conch-shells from there.&rdquo;</blockquote>
+      <div class="cargo">Back: <b>conch-shells</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">V</div>
+      <div class="dest">Barbaricum <span style="font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);">(Sindh)</span></div>
+      <div class="mode sea">sea route</div>
+      <blockquote>&ldquo;I went to the coast of Barbaricum taking fabrics with me, and brought pearls and ivory.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>fabrics</b> &nbsp;→&nbsp; Back: <b>pearls</b> (Persian Gulf) &amp; <b>ivory</b> (Africa)</div>
+    </div>
+
+    <div class="card">
+      <div class="num">VI</div>
+      <div class="dest">Suvarṇadvīpa <span style="font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);">(Sumatra)</span></div>
+      <div class="mode sea">sea route</div>
+      <blockquote>&ldquo;I went to Suvarṇadvīpa taking flowers of the Pālāsa tree, and brought gold from there.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>pālāsa flowers</b> &nbsp;→&nbsp; Back: <b>gold</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">VII</div>
+      <div class="dest">China &amp; Mahāchīna</div>
+      <div class="mode sea">sea route</div>
+      <blockquote>&ldquo;I went to China and Mahāchīna, taking buffaloes and a kind of deer, and brought back silk.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>buffaloes, deer</b> &nbsp;→&nbsp; Back: <b>silk</b></div>
+    </div>
+
+    <div class="card">
+      <div class="num">VIII</div>
+      <div class="dest">Ratnadvīpa <span style="font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);">(likely Sri Lanka)</span></div>
+      <div class="mode sea">sea route</div>
+      <blockquote>&ldquo;I went to Ratnadvīpa with leaves of the Nimba tree, and brought gems from there.&rdquo;</blockquote>
+      <div class="cargo">Out: <b>nimba leaves</b> &nbsp;→&nbsp; Back: <b>gems</b></div>
+    </div>
+
+  </div>
+
+  <div class="closing">
+    <p>Read together, the eight accounts resist any single story about how goods reached the Deccan. Half moved on foot and hoof across the subcontinent's own interior — horses for elephants, betel-nuts for horses, pearls for fly-whisks — a closed, self-supplying circuit of regional exchange. The other half only existed because of the monsoon: ships timed to a four-month sailing window, carrying pālāsa flowers to Sumatra and coming back with gold, carrying buffaloes to a Chinese coast and coming back with silk. One profession, one evening, one guild hall — and inside it, two entirely different logistics systems, running side by side, neither one aware it needed the other until the stories were told back to back.</p>
+    <p>Mishra reads the scene as "a graphic picture of the commercial life of India during the eighth century, when Indian traders carried on a brisk commerce from Takshaśilā to Sumatra and from China to Barbaricum or Sindh through the Rāshṭrakūṭa port of Sūrpāraka, which was to India then what Bombay is at the present moment" — and the comparison, eight individual voices later, earns itself.</p>
+  </div>
+
+  <footer>
+    <span>Source: Uddyotanasūri, <em>Kuvalayamālākahā</em>, 779 CE, via Jayashri Mishra, <em>Social &amp; Economic Conditions under the Imperial Rāshṭrakūṭas</em> (1991)</span>
+    <span>Callout draft — Manyakheta / Part III</span>
+  </footer>
+
+</div>
+</body>
+</html>
