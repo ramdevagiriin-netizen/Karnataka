@@ -1,1 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Fourth King: Manyakheta and the Rashtrakutas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE5D6; --paper-2:#E1D7C2; --ink:#231F18; --ink-soft:#4A4131;
+  --indigo:#233A54; --ember:#9C4A24; --moss:#4E6B54; --gold:#A5793A; --rule:rgba(35,31,24,0.26);
+}
+*{box-sizing:border-box;}
+html{color-scheme:light; background-color:var(--paper);}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(ellipse at 18% 8%, rgba(255,255,255,0.15), transparent 55%),
+    radial-gradient(ellipse at 85% 95%, rgba(0,0,0,0.06), transparent 50%);
+  color:var(--ink) !important;
+  font-family:'Crimson Text', Georgia, serif;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:64px 28px 120px;}
+header.title-block{margin-bottom:56px;}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ember); font-weight:600; display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow::before{content:""; width:26px; height:1px; background:var(--ember); display:inline-block;}
+h1.maintitle{
+  font-family:'Cormorant Garamond', serif; font-weight:700; font-style:italic;
+  font-size:clamp(34px,6vw,58px); line-height:1.08; margin:0 0 10px;
+}
+p.subtitle{font-size:19px; color:var(--ink-soft); font-style:italic; margin:0 0 8px;}
+p.draftnote{font-family:'IBM Plex Mono'; font-size:11px; color:var(--ember); text-transform:uppercase; letter-spacing:0.06em; margin:18px 0 0;}
 
+nav.toc{
+  margin:40px 0 56px; padding:22px 26px; background:var(--paper-2); border:1px solid var(--rule);
+  columns:2; column-gap:28px;
+}
+nav.toc a{
+  display:block; font-family:'IBM Plex Mono'; font-size:13px; color:var(--ink-soft);
+  text-decoration:none; padding:5px 0; break-inside:avoid;
+}
+nav.toc a:hover{color:var(--ember);}
+nav.toc a .n{color:var(--ember); margin-right:8px;}
+
+h2{
+  font-family:'Cormorant Garamond', serif; font-weight:700; font-style:italic;
+  font-size:clamp(26px,4vw,34px); line-height:1.15; margin:64px 0 22px;
+  padding-top:8px; border-top:1px solid var(--rule);
+  scroll-margin-top:20px;
+}
+h2 .roman{color:var(--ember); font-style:normal; margin-right:6px;}
+
+p{font-size:18px; color:var(--ink-soft); margin:0 0 22px;}
+strong{color:var(--ink); font-weight:700;}
+em{color:var(--ink);}
+sup{font-size:12px; color:var(--ember); font-weight:600;}
+
+img{max-width:100%; height:auto; display:block; margin:36px auto 4px; border:1px solid var(--rule);}
+img + em, p:has(> img){ }
+p:has(img){margin-bottom:6px;}
+
+.callout-card{
+  margin:40px 0; padding:22px 26px; background:var(--paper-2); border:1px solid var(--rule);
+  border-left:4px solid var(--ember); display:block; text-decoration:none; position:relative;
+}
+.callout-card::before{content:""; position:absolute; inset:6px 6px 6px 10px; border:1px solid rgba(35,31,24,0.13); pointer-events:none;}
+.callout-card .cc-tag{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:8px;}
+.callout-card .cc-title{font-family:'Cormorant Garamond'; font-weight:700; font-style:italic; font-size:24px; color:var(--ink); margin:0 0 8px;}
+.callout-card .cc-desc{font-family:'Crimson Text'; font-size:16.5px; color:var(--ink-soft); margin:0 0 10px;}
+.callout-card .cc-link{font-family:'IBM Plex Mono'; font-size:12px; color:var(--ember); text-decoration:none;}
+.callout-card:hover{border-left-color:var(--indigo);}
+.callout-card:hover .cc-link{text-decoration:underline;}
+
+.notes-head{margin-top:80px;}
+.notes-section p{font-size:14.5px; color:var(--ink-soft); margin-bottom:12px; padding-left:0;}
+
+footer.pagefoot{
+  margin-top:80px; padding-top:20px; border-top:1px solid var(--rule);
+  font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+a.backlink{color:var(--ember); text-decoration:none;}
+
+@media (max-width:640px){
+  nav.toc{columns:1;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="title-block">
+    <div class="eyebrow">Karnataka Trade Cities — Part III</div>
+    <h1 class="maintitle">The Fourth King:<br>Manyakheta and the Rashtrakutas</h1>
+    <p class="subtitle">The third part of a series on the trade cities of medieval Karnataka</p>
+  </header>
+
+  <nav class="toc">
+    <a href="#sec-i"><span class="n">I</span>The merchant who counted kings</a>
+<a href="#sec-ii"><span class="n">II</span>The vassal who counted higher</a>
+<a href="#sec-iii"><span class="n">III</span>A house built for pride</a>
+<a href="#sec-iv"><span class="n">IV</span>What the mountain proves</a>
+<a href="#sec-v"><span class="n">V</span>Five reigns, two centuries</a>
+<a href="#sec-vi"><span class="n">VI</span>Ledgers, again, and a second channel</a>
+<a href="#sec-vii"><span class="n">VII</span>What the land actually paid</a>
+<a href="#sec-viii"><span class="n">VIII</span>What Manyakheta actually sold</a>
+<a href="#sec-ix"><span class="n">IX</span>Guild, bank, and blade</a>
+<a href="#sec-x"><span class="n">X</span>What a coin could buy</a>
+<a href="#sec-xi"><span class="n">XI</span>What the philosophers argued about</a>
+<a href="#sec-xii"><span class="n">XII</span>Where the grammar was taught</a>
+<a href="#sec-xiii"><span class="n">XIII</span>Three gems, a mathematician, and one dog</a>
+<a href="#sec-xiv"><span class="n">XIV</span>The house of pride, undone</a>
+  </nav>
+
+  <main>
+    <h2 id="sec-i"><span class="roman">I.</span> The merchant who counted kings</h2>
+<p>Around 851 CE, an Arab merchant named Sulaiman al-Tajir — Sulaiman
+"the Merchant," a title that was itself a small biography — wrote down
+an assessment of the world's great powers that has survived, in one form
+or another, for over a thousand years. There were four kings, he said,
+who stood above all others: the Caliph, sovereign of the Arabs and lord
+of the faithful; the Emperor of Byzantium; the Emperor of China; and a
+fourth, ruling somewhere in the Deccan of southern India, whom Sulaiman
+called by a title rather than a name — the Balhara, a merchant's rough
+transliteration of <em>Vallabharaja</em>, "beloved king." No embassy had
+sent him to make this judgment. No treaty required it. He was a trader,
+assessing the world the way traders assess anything: by what actually
+worked, who could actually be dealt with, whose word actually held.</p>
+<p>The king he meant was almost certainly Amoghavarsha I, who by 851 CE
+had already ruled for close to four decades from a capital most of the
+modern world has never heard of: Manyakheta, in what is now northern
+Karnataka. This is worth sitting with before anything else, because it
+inverts the usual order of things. Most history arrives already knowing
+which kingdoms matter and works backward to explain why. Sulaiman did
+not know that. He had no reason to flatter a Deccan king, no diplomatic
+incentive, no audience to please beyond other merchants planning their
+own routes. He named the Rashtrakutas as one of four great powers on
+Earth because, from where he stood — inside the actual commercial
+traffic of the ninth-century world — that is simply what the evidence
+showed him.</p>
+<p>Sulaiman was not a lone voice. His account survives partly because a
+later compiler, Abu Zayd al-Sirafi, gathered and expanded it around 916
+CE, adding the testimony of other merchants who had themselves sailed
+the same routes — and the geographers who followed in the ninth and
+tenth centuries largely agree with him. Ibn Khordadbih, writing his own
+geographical compendium for the Abbasid postal service around 870 CE,
+and al-Istakhri, working a century later, both describe the same
+southern Indian power in similar terms: wealthy, stable, and worth doing
+business with.<sup>1b</sup> "Balhara" itself was not a name at all but a
+title these Arab writers kept reapplying to whichever Rashtrakuta king
+currently held Manyakheta, generation after generation — the way a
+modern trade report might simply say "the throne" rather than track
+every succession. That a foreign merchant vocabulary needed no updating
+across multiple reigns is itself a kind of evidence: continuity legible
+enough, from three thousand kilometres away, that the details of who
+exactly wore the crown barely mattered to the men actually moving
+goods.</p>
+<p>This is the third part of a story that began with a river town that
+had no coastline, and continued through a workshop town three hundred
+kilometres from the sea. Neither Banavasi nor Aihole made an obvious
+world power. And yet both towns kept producing, generation after
+generation, an unusually capable class of traders — the same merchants
+whose descendants would go on to build what is now widely regarded as
+the earliest organisation resembling a truly global trading house,
+reaching from the Deccan to Sumatra and beyond. Manyakheta belongs in
+between these two moments: a capital ruling over exactly the world that
+made the guild's later reach possible, even if the guild itself does not
+yet have a name in this part of the story. It ends, this time, somewhere
+genuinely odd for a power of this scale: a foreign merchant could name
+this dynasty among the four greatest on Earth, and yet its capital sat
+neither behind Banavasi's river-loop nor inside Badami's fortress-cliffs
+— the two defensive logics every previous capital has relied on so far —
+but in comparatively open country, a city that announced its importance
+through reputation rather than through the ground it stood on. Its own
+name meant something close to "the house of pride," and the dynasty that
+built it rose, once again, from inside the very system it would go on to
+conquer.</p>
+<h2 id="sec-ii"><span class="roman">II.</span> The vassal who counted higher</h2>
+<p>Dantidurga's own family had been climbing for at least a generation
+before his campaigns began. His father, Indra I, ruled from Berar as a
+Chalukya feudatory in his own right, and secured his own standing
+through a marriage the sources describe in strikingly blunt terms: a
+rakshasa vivaha, marriage by abduction, of a Chalukya princess named
+Bhavanaga, seized — in the words of a later Rashtrakuta charter — by
+force from her own marriage pandal at Kaira. It reads, on its face, like
+scandal. It functioned, in practice, like strategy: Indra I was very
+likely present at Kaira as a Chalukya feudatory himself, called up for a
+joint campaign against Valabhi, and the marriage that resulted — however
+it began — tied his own line by blood into the very dynasty his son
+would one day end.<sup>0b</sup></p>
+<p>Dantidurga did not appear from nowhere, in other words. By the 730s,
+as the previous part has already traced, he was a Chalukya feudatory — a
+trusted subordinate, not a rival — fighting alongside the Badami
+Chalukyas against the Umayyad Caliphate's advance into Gujarat in the
+very years the Caliphate itself was at its most expansive.<sup>1</sup>
+It is the same pattern we keep returning to: Kadamba officials becoming
+Chalukya kings, Chalukya vassals becoming Rashtrakuta emperors. Power in
+this world rarely arrived from outside. It climbed, patiently, from
+within.</p>
+<p>By 753 CE, Dantidurga had judged the moment right. He defeated
+Kirtivarman II, the last Badami Chalukya, and ended a dynasty that had
+ruled the Deccan for over two centuries.<sup>2</sup> His own
+inscriptions — read, as always, with appropriate scepticism for the
+genre — claim campaigns reaching from the Mahi river in Gujarat to the
+Mahanadi in Kalinga, against the Gurjaras of Malwa, the Chalukyas of
+Lata, and rulers as far afield as Kosala and Kanchi.<sup>3</sup> More
+reliable than the geography is the theatre he staged to announce it.
+Around 752–753 CE, at Ujjain — a city already carrying centuries of
+accumulated royal legitimacy — Dantidurga performed the
+<strong>Hiranyagarbha</strong>, the rite of the golden womb, which
+allowed him a rebirth without the inconvenience of first having to die.
+Freshly sanctified with holy waters, he climbed into a golden vessel
+cast in the shape of a cow and entered it through its mouth. Crouched
+inside, he underwent, in miniature, an entire gestation: priests
+performed over him the same rites ordinarily reserved for a pregnant
+woman, conception and the parting of the hair and the safeguarding of
+the womb, compressed into a single afternoon. Drawn back out, he was
+given the naming-rite owed to a newborn, and a chant marked what he had
+become — a man who had entered <em>martya</em>, merely mortal-natured,
+and climbed out <em>divya-deha</em>, holding a divine body. The vessel
+itself, gold worth a small kingdom, went to the priests who had staged
+his rebirth: a fee paid, quite literally, in the raw material of the
+divinity he had just acquired.<sup>4</sup> The choice of ritual was not
+neutral. Two centuries earlier, Pulakeshin I had performed this same
+Hiranyagarbha to announce the sovereignty of the Badami Chalukya line
+its own founder was staking out — the very dynasty Dantidurga had just
+finished dismantling.^(4b) He was not merely borrowing a generic tool of
+legitimacy; he was reaching for the founding gesture of the house he had
+replaced, and using it on himself. Washed clean of any lingering
+question about a feudatory family's lesser origin, he was ready for what
+came next. The Samangad copper plates record a detail sharp enough to
+read as deliberate theatre in its own right: the Gurjara king of Malwa
+attended the ceremony not as an equal, but in the specific ritual role
+of <em>pratihara</em> — doorkeeper — a pointed pun aimed at the
+Gurjara-<strong>Pratihara</strong> dynasty's own name, staged for an
+audience certain to catch it.<sup>5</sup></p>
+<p>Dantidurga hedged his new legitimacy with an older tool than ritual
+theatre: marriage. He gave a daughter to <strong>Nandivarman II
+Pallavamalla</strong>, the Pallava king of Kanchi — binding, at a
+stroke, the newest imperial house in the Deccan to one of the oldest
+dynasties in the south, the same Pallava line whose earlier kings had
+defeated and killed a Chalukya emperor at Vatapi barely a century
+before.<sup>5b</sup> It is a marriage alliance in the same register
+already seen twice before: Kakusthavarma's Gupta and Vakataka matches,
+Pulakeshin II's Ganga bride — legitimacy purchased in bloodlines because
+it could not yet be assumed from lineage alone.</p>
+<p>Dantidurga died without a male heir, and the throne passed to his
+uncle, <strong>Krishna I</strong> — the king whose own ambitions would
+shortly reshape a mountainside at Ellora, and whose story belongs to the
+next section.<sup>6</sup> But before the mountain, there is the matter
+of where all of this actually happened, and why.</p>
+<a class="callout-card" href="callouts/global-context-callout.html" target="_blank">
+  <span class="cc-tag">Companion piece — World Context</span>
+  <p class="cc-title">Elsewhere, at the Same Time</p>
+  <p class="cc-desc">While the Kadambas and Chalukyas ruled the Deccan, Rome fell, Justinian built the Hagia Sophia, and an East Anglian king went into the ground at Sutton Hoo. A parallel timeline for context, not connection.</p>
+  <span class="cc-link">Open the full timeline &rarr;</span>
+</a>
+<h2 id="sec-iii"><span class="roman">III.</span> A house built for pride</h2>
+<p>Manyakheta — the name is generally read as "the house of Manya,"
+though popular etymology has long preferred a bolder gloss, something
+closer to "the abode of honour" or "the house of pride." Its modern
+name, Malkhed, sits in Kalaburagi (Gulbarga) district, in the dry
+northeastern stretch of Karnataka, a considerable distance from every
+site visited so far — further from Banavasi's river-loop, further from
+Aihole's workshop valley, further still from the sea than
+either.<sup>7</sup></p>
+<p>This was, deliberately, a different kind of capital from Vatapi.
+Where Pulakeshin I chose a defensible cleft between sandstone cliffs,
+Manyakheta sits in comparatively open country — a choice that reads less
+like a fortress-builder's instinct and more like a statement of
+confidence, a dynasty secure enough in its own reach not to need a
+mountain at its back. The Kagina river runs nearby, a tributary feeding
+eventually into the Bhima and then the Krishna system — meaning, in a
+pattern already familiar from Aihole, that Manyakheta's own water, like
+Aihole's, drains east toward the Bay of Bengal rather than west toward
+the Arabian Sea.<sup>8</sup> A dynasty capable of being called one of
+the four great kingdoms on Earth by a foreign merchant did not sit on
+the coast, did not sit on a river that reached the coast, and did not,
+on the evidence so far, need to.</p>
+<p>The ground itself is different too. This is Deccan Trap country —
+black, basalt-derived soil, the same volcanic rock later carved into the
+Kailasa temple, formed from lava flows tens of millions of years older
+than anything else described so far. It holds water poorly compared to
+the alluvial river valleys around Aihole or Banavasi, but it is
+exceptionally fertile once worked, particularly for cotton — a crop we
+will return to when the question turns to what Manyakheta actually
+exported.<sup>8b</sup> The dynasty's own name may reach back further
+than its founding king. One tradition traces "Rashtrakuta" to the
+<em>Rastikas</em> or <em>Rathikas</em>, a clan named in Ashoka's own
+third-century-BCE edicts as a people of the Deccan — a genealogical
+claim spanning a thousand years, and one that should be read as a
+dynasty reaching for the deepest possible legitimacy rather than as
+settled fact.<sup>8c</sup></p>
+<p>The dynasty’s own emblem, curiously, was not new either. Rashtrakuta
+copper-plate seals carried Garuda, Vishnu’s eagle-mount, alongside
+images of the rivers Ganga and Yamuna — and the royal banner
+Manyakheta’s kings marched under, the <em>Palidhvaja</em>, had
+originally belonged to someone else entirely: the Badami Chalukyas, who
+had first raised it as a victory-standard against north Indian kings.
+The Rashtrakutas simply inherited it, unaltered, as the price and
+privilege of having replaced the dynasty that once carried it — the same
+absorb-rather-than-erase instinct that will recur, at far greater scale,
+in a mountainside outside Ellora. Dantidurga’s own seal stayed unchanged
+even as his status did not, still reading as a feudatory’s device long
+after he had made himself an emperor; only under Amoghavarsha I did the
+design begin to grow more elaborate, gaining a snake gripped in each of
+Garuda’s hands, Ganapati and a ceremonial lamp worked into the corners,
+Parvati standing before a lion, a svastika near the base. Later kings
+kept adding to it rather than starting over — Indra III folding in a
+linga and an elephant-goad, Govinda IV’s seal surrounding Garuda with a
+dagger, bow, and arrow, Krishna III’s the most crowded of all — a small,
+private register, carried on every grant a scribe ever sealed, of just
+how much confidence each reign had accumulated to
+spend.<sup>8d</sup></p>
+<a class="callout-card" href="callouts/rashtrakuta-geography-callout.html" target="_blank">
+  <span class="cc-tag">Companion piece — Geography &amp; Extent</span>
+  <p class="cc-title">One Empire, Six Modern States</p>
+  <p class="cc-desc">A schematic map of the Rashtrakuta empire's reach, overlaid on today's state borders — ports known and inferred, Ghat passes, and how far campaigns actually travelled from Manyakheta.</p>
+  <span class="cc-link">Open the map &rarr;</span>
+</a>
+<h2 id="sec-iv"><span class="roman">IV.</span> What the mountain proves</h2>
+<p>If Kirtivarman I's conquest of Banavasi and Kirtivarman I's
+absorption of the Kadamba tax system showed one kind of continuity,
+Krishna I's most famous act shows another, more literal one. Sometime
+after 756 CE, Krishna I commissioned what remains, by most measures, the
+single most extraordinary building project of the entire early medieval
+Deccan: the <strong>Kailasa temple at Ellora</strong>, carved not built
+— a structure excavated downward and inward from a single mass of
+basalt, top to bottom, so that its builders worked in reverse of every
+other temple already described, removing rock rather than stacking it,
+with no margin for correction once a cut was made. Current scholarship
+credits the temple’s core construction not to Krishna I alone but to a
+concentrated, roughly twenty-year campaign spanning both his reign and
+Dantidurga’s before him — meaning the project outlasted the very
+transition of power this whole account has just traced, begun by the
+dynasty’s founder and completed, or very nearly completed, by his
+successor.<sup>9</sup></p>
+<figure>
+<img src="images/kailasa-shikhara.jpeg"
+alt="The Kailasa temple’s tiered shikharas, framed by the surrounding rock overhang left uncut around the excavation." />
+<figcaption aria-hidden="true">The Kailasa temple’s tiered shikharas,
+framed by the surrounding rock overhang left uncut around the
+excavation.</figcaption>
+</figure>
+<p>The debt it owes to Pattadakal is not a matter of vague stylistic
+resemblance. The Kailasa's overall form — its plan, its proportions, its
+Dravida-style tower — is now generally read as a direct, deliberate
+reworking of the <strong>Virupaksha temple</strong>, the very building
+Queen Lokamahadevi financed from her own independent treasury a
+generation earlier.<sup>10</sup> A Rashtrakuta king, having just ended
+two centuries of Chalukya rule, chose to make his own greatest monument
+a scaled-up echo of the temple his predecessors' queen had built to
+commemorate a Chalukya victory. Conquest, once again, absorbed rather
+than erased what it defeated — the same pattern already traced through
+Jayasimha and Ranaraga's careers, through Kirtivarman I's inherited tax
+categories, now repeated at the scale of an entire mountainside.</p>
+<p>Krishna I's reign is otherwise remembered for subduing the Gangas of
+Mysore, extending Rashtrakuta authority south into territory the
+Chalukyas had never fully controlled.<sup>11</sup> But it is the
+mountain that endures as the clearest possible answer to a question
+worth asking of every dynasty in turn: what does the stone actually
+prove? At Banavasi, the proof was coin hoards and a merchant's own
+boast. At Aihole, it was the sheer proliferation of experimental forms.
+At Ellora, the proof is more direct than either — a single monolithic
+structure whose construction required removing an estimated <strong>two
+hundred thousand tonnes of rock</strong>, without the option of stopping
+to reconsider halfway through.<sup>12</sup> Estimates of how long the
+work took vary widely, from a single extraordinarily concentrated
+campaign of a few decades to a project that continued, more plausibly,
+across several reigns after Krishna I's own — meaning the Kailasa may
+have outlived the very king who conceived it, a monument the dynasty
+kept paying for long after its founder was gone.<sup>12b</sup></p>
+<p>The Rashtrakutas did not stop at Ellora's Hindu caves. A separate,
+later group at the same site — the <strong>Indra Sabha</strong>, a
+two-storeyed, richly carved Jain cave complex — records continued royal
+and elite patronage of Jainism at Ellora across the ninth and tenth
+centuries, the same institutional pattern already visible at
+Manyakheta's own court through Jinasena's guruship.<sup>12c</sup> A
+single hillside, in other words, carries both halves of the Rashtrakuta
+religious settlement already sketched here: a mountain-sized Shiva
+temple standing beside a Jain excavation, patronised by kings whose own
+private devotion did not always match the god their grandest public
+monument was built for. A state capable of committing that much labour,
+that irreversibly, to a single religious statement was not merely
+wealthy. It was confident enough in its own continuity to gamble an
+entire mountain on it — twice, in two different faiths, without apparent
+contradiction.</p>
+<p>Some of the labour that raised the Kailasa may not even have been
+local. The temple’s tall plinth is carved with elephants and lions in a
+style scholars connect directly to Pallava sculpture, and it has been
+argued that Pallava sculptor guilds were drawn north to Ellora
+specifically by Rashtrakuta patronage — skilled hands following royal
+commissions across the same dynastic lines the temple itself was built
+to announce a victory over.<sup>12d</sup> No foundation inscription
+survives at the Kailasa temple itself, worth stating plainly rather than
+glossing over: the whole attribution to Dantidurga and Krishna I rests
+on external evidence — copper-plate grants, the iconographic programme,
+and a separately inscribed neighbour, the Dashavatara cave, directly
+linked to Dantidurga by its own inscription and stylistically bridging
+to the (uninscribed) Kailasa. The attribution is strong. It is also,
+formally, an inference rather than a signature the builders left
+behind.</p>
+<figure>
+<img src="images/kailasa-aerial.png"
+alt="The Kailasa temple complex seen from above, showing the freestanding Dhwaja Stambha pillar, the Nandi shrine, and the scale of the whole excavated courtyard." />
+<figcaption aria-hidden="true">The Kailasa temple complex seen from
+above, showing the freestanding Dhwaja Stambha pillar, the Nandi shrine,
+and the scale of the whole excavated courtyard.</figcaption>
+</figure>
+<p>A second site, forty kilometres north, extends this same pattern of
+long Rashtrakuta-era religious continuity somewhere it is easy to
+overlook. The Buddhist caves at Ajanta had fallen quiet by the mid-sixth
+century, their great patrons among the Vakataka nobility gone and their
+own dynasty soon to follow. Yet a single inscription survives in Cave 26
+— the site’s own chaitya hall, its stupa and pillars still carrying
+traces of paint — naming a Rashtrakuta patron and dating to the eighth
+or ninth century.<sup>12f</sup> It is a solitary record, not evidence of
+a revived monastic community on Ajanta’s earlier scale, but it is enough
+to show that the site had not simply been abandoned to the jungle that
+would eventually swallow it until a British officer on a tiger hunt
+rediscovered it in 1819. Someone, under Rashtrakuta rule, still climbed
+the gorge path to Ajanta, still found the chaitya hall worth marking
+with their own name. Fine art in this period was not confined to Ellora
+alone; it simply left, at Ajanta, a much fainter trace.</p>
+<figure>
+<img src="images/ajanta-cave26-interior.jpeg"
+alt="Cave 26, Ajanta — the chaitya hall carrying the site’s solitary Rashtrakuta-era inscription. Photo by Ram Devagiri." />
+<figcaption aria-hidden="true">Cave 26, Ajanta — the chaitya hall
+carrying the site’s solitary Rashtrakuta-era inscription. Photo by Ram
+Devagiri.</figcaption>
+</figure>
+<a class="callout-card" href="callouts/kailasa-temple-callout.html" target="_blank">
+  <span class="cc-tag">Companion piece — Architecture &amp; Attribution</span>
+  <p class="cc-title">A Mountain, Carved Downward</p>
+  <p class="cc-desc">How the Kailasa temple was actually cut from the rock, what current scholarship credits to Dantidurga versus Krishna I, and what the evidence does and doesn't actually say.</p>
+  <span class="cc-link">Read the full piece &rarr;</span>
+</a>
+<h2 id="sec-v"><span class="roman">V.</span> Five reigns, two centuries</h2>
+<p>Krishna I's successors ruled through what most historians treat as
+the Rashtrakuta dynasty's genuine peak — roughly two centuries during
+which a Deccan capital, for the only sustained stretch in this whole
+series, could plausibly claim to matter on a continental rather than
+merely regional scale.</p>
+<p><strong>Dhruva Dharavarsha</strong> (r. 780–793) is generally
+credited as the reign that turned Rashtrakuta ambition northward in
+earnest. He defeated both the Gurjara-Pratihara king Vatsaraja and the
+Pala king Dharmapala — the two great rival powers of north India in this
+period — and became, in the process, the first Deccan king to seize
+<strong>Kannauj</strong>, the ancient seat of imperial legitimacy on the
+Gangetic plain that both the Palas and the Pratiharas spent the better
+part of a century fighting over.<sup>13</sup> The campaigns were not
+followed by annexation; the Rashtrakutas withdrew south again, their
+point evidently already made. His victory over the Ganga and Yamuna
+rivers themselves became a matter of court record: later Rashtrakuta
+inscriptions added the twin river emblems to the dynasty's own imperial
+insignia, a permanent heraldic boast that the family had once made
+rivers a thousand kilometres from home carry its mark.<sup>13b</sup>
+Something closer to the everyday texture of Dhruva's rule survives too,
+in an unexpected source: the Jain <em>Harivamsha Purana</em>, composed
+by Jinasena in 783 CE — within Dhruva's own reign — records a feudatory
+lord named <strong>Sankargana</strong> formally seeking the king's prior
+approval before making a land grant of his own, a small but real glimpse
+of the administrative chain of command actually functioning, rather than
+merely being described in an inscription's
+boilerplate.<sup>13c</sup></p>
+<p>His son <strong>Govinda III</strong> (r. 793–814) went further still,
+defeating Dharmapala a second time alongside the Kannauj ruler
+Chakrayudha, and shattering a southern confederacy of Ganga, Chera,
+Pandya, and Pallava rulers in the same reign — a Deccan power fighting
+successfully on two fronts a thousand kilometres apart within a single
+generation.<sup>14</sup> The same Purana names a second feudatory,
+<strong>Buddhavarsa</strong>, seeking Govinda III's own approval for a
+land grant, suggesting the practice recorded under his father continued
+as ordinary administrative habit rather than a one-off
+flourish.<sup>14b</sup> It is worth noting, too, that Govinda III was
+not his father's eldest son — the succession passed to a younger prince
+judged more capable, a reminder that Rashtrakuta kingship, like the
+feudatory approvals just described, ran on functioning judgment as much
+as on rigid hereditary formula.<sup>14c</sup></p>
+<p><strong>Amoghavarsha I</strong> (r. 814–878) is the reign already
+circled twice so far — through Jinasena's guruship and through Sulaiman
+al-Tajir's own verdict — and it deserves its full context here.
+Sixty-four years is an extraordinarily long reign by any premodern
+standard, long enough that Amoghavarsha's own personality, rather than
+his conquests, defined the era: a king remembered as favouring
+literature and religion over the battlefield, author in his own right of
+the <em>Kavirajamarga</em> and the <em>Prashnottara Ratnamalika</em> —
+the latter later translated into Tibetan — and a devoted follower of
+Jainism who nonetheless, as we will return to, presided over a dynasty
+whose most famous public monument was a temple to Shiva.<sup>15</sup>
+Even his birth carries a specific, human detail: he is said to have been
+born around 800 CE at a place called Sri Bhavan, on the banks of the
+Narmada, while his father Govinda III was still returning from his own
+northern campaigns. His reign was administratively vast as well as long
+— sixteen separate Rashtras (provinces) by one count, a scale of
+governance the next section will examine properly.<sup>16</sup> And the
+family's reach into administration was not confined to men: his own
+daughter, <strong>Revakanimaddi</strong>, is recorded governing the
+Edathore Vishaya, a district, in her own right — a woman holding real
+administrative office, not merely funding temples from a private purse
+the way Chalukya queens had a generation earlier.<sup>16b</sup></p>
+<p><strong>Indra III</strong> (r. 914–929) restored the northern
+ambition Amoghavarsha's long peace had let lapse, defeating the
+Pratihara king Mahipala I and plundering Kannauj a second time — and it
+is this campaign that earned him Al-Masudi's explicit praise as the
+greatest king in India, independent corroboration of exactly the kind
+Sulaiman had offered two generations earlier.<sup>17</sup> And
+<strong>Krishna III</strong> (r. 939–967) closes the dynasty's imperial
+arc where the previous section has already placed him: at Melpati in 959
+CE, having broken the Chola crown prince Rajaditya at the Battle of
+Takkolam ten years earlier, having occupied Tondaimandalam north of the
+Kaveri, and having erected a victory pillar and temple at Rameshwaram —
+the furthest south any Rashtrakuta army had ever fought, at almost the
+furthest possible remove from Manyakheta itself.<sup>18</sup></p>
+<p>Five reigns, roughly two centuries, and a striking pattern sits
+underneath all of them: every major campaign just described was fought
+hundreds of kilometres from the capital that funded it --- in Kannauj’s
+case, comfortably over a thousand. A dynasty whose own city sat inland,
+on a river flowing the wrong way, nonetheless projected force to Kannauj
+in the north and Rameshwaram in the deep south — the same structural
+question already asked of Banavasi's pepper and Aihole's warhorses now
+applies, at imperial scale, to an entire army's reach.</p>
+<h2 id="sec-vi"><span class="roman">VI.</span> Ledgers, again, and a second channel</h2>
+<p>The Rashtrakutas did to the Chalukya administrative machine exactly
+what the Chalukyas had done to the Kadamba one two centuries earlier:
+they kept it. The five-tier hierarchy already traced through Aihole
+reappears here with new names on old offices — <strong>Rashtra</strong>
+(or Mandala, a province, headed by a Rashtrapati who was, on occasion,
+the emperor himself), <strong>Vishaya</strong> (district, under a
+Vishayapati), <strong>Nadu</strong> (a subdivision below the Vishaya,
+managed by a Nadugowda or Nadugavunda), and <strong>Grama</strong> (the
+village, headed by a Gramapati or Prabhu Gavunda).<sup>19</sup>
+Amoghavarsha I's reign alone contained sixteen separate Rashtras — a
+figure that, set against the ninety-nine-thousand-village provinces
+Xuanzang once reported under Pulakeshin II, suggests either a genuine
+administrative reorganisation into fewer, larger units, or simply that
+different observers, in different centuries, were counting different
+things. Either way, the machine survived the change of dynasty intact
+enough to keep functioning.</p>
+<p>At the centre sat a small cluster of named offices whose titles alone
+tell you what the state considered worth formally naming: the
+<strong>Mahasandhivigrahi</strong>, chief minister, marked out by five
+separate insignia of office; the <strong>Dandanayaka</strong>, military
+commander; the <strong>Mahakshapataladhikrita</strong>, effectively a
+foreign minister, responsible for relations and correspondence with
+other courts; and the <strong>Mahamatya</strong> or
+<strong>Purnamathya</strong>, prime minister in the fuller
+administrative sense.<sup>20</sup> Succession to the throne itself,
+tellingly, did not run on strict primogeniture — Govinda III, as the
+previous section has already noted, was not Dhruva's eldest son, but the
+one judged most capable of holding an empire that now stretched from the
+Narmada to the Kaveri. A state this large evidently could not afford the
+luxury of automatic inheritance; it needed, or believed it needed, its
+actual best available candidate.</p>
+<p>The army this administration funded and fielded followed the same
+threefold composition already familiar from the Chalukya chapters
+already covered — infantry, cavalry, and elephants — but with one
+specifically Rashtrakuta innovation worth noting: a permanent standing
+force, garrisoned year-round at the capital itself in a cantonment
+called the <strong>Sthirabhuta Kataka</strong>.<sup>21</sup> This is a
+meaningful departure from the Chalukya pattern of a core royal force
+supplemented, as needed, by feudatory contingents called up for
+individual campaigns. A dynasty capable of fighting simultaneously at
+Kannauj and against a southern confederacy, within a single generation,
+needed something more reliable at its own centre than seasonal levies —
+and built it.</p>
+<p>It is in the actual granting of land, though, that the machinery
+becomes visible doing real work rather than simply existing on an org
+chart. The pattern already glimpsed through Sankargana and Buddhavarsa —
+feudatories formally requesting royal approval before making grants of
+their own — was not an isolated courtesy recorded once and forgotten. It
+describes a genuine chain of permission running downward from Manyakheta
+through every layer of the hierarchy, and it explains something that
+might otherwise look like a contradiction: how a dynasty could
+simultaneously hold near-total military authority and preside over
+hundreds of technically independent local lords, each with their own
+army, their own fortress, their own right to grant land — provided the
+grant was cleared, first, with the centre.<sup>21b</sup> Sub-infeudation
+on this scale, as the historian R.S. Sharma has argued, produced
+genuinely new social categories that the old four-fold varna scheme had
+no ready place for — most visibly the <strong>Kayasthas</strong>, a
+class of professional scribes and administrators whose entire existence
+traces back to princes needing literate men to manage the paperwork
+generated by exactly this kind of layered land-granting.<sup>21c</sup>
+Status, in this world, could also be built into architecture directly: a
+contemporary text, the <em>Mayamata</em>, specifies a housing hierarchy
+by rank almost bureaucratic in its precision — an emperor of the whole
+earth entitled to an eleven-storeyed house, an ordinary king to seven
+storeys, Vaishyas and military captains to four, down to a single storey
+for the lowest ranks.<sup>21d</sup> Even artisans and merchants, in this
+period, could be granted formal military-administrative titles carrying
+real social weight: an inscription elsewhere in early medieval India
+records a guild-head named Shulapani, chief of the artisans of Varendra,
+holding the title <em>ranaka</em> — a title otherwise associated with
+warrior nobility, now attached to a craft leader.<sup>21e</sup></p>
+<p>And running alongside this entire tax-and-grant apparatus, as Part II
+already established for the Chalukyas, sat a second channel entirely —
+the independent wealth a royal woman controlled in her own right,
+outside the state treasury altogether. Revakanimaddi's governance of the
+Edathore Vishaya, already introduced in the previous section, sits at an
+interesting angle to this pattern rather than simply repeating it: where
+Lokamahadevi at Pattadakal spent her own stridhana on a temple,
+Revakanimaddi appears to have held actual administrative office within
+the state apparatus itself, a district under her direct governance
+rather than a monument under her private patronage. Two different
+Rashtrakuta-era women, two different relationships to power — one
+funding religion from outside the treasury, one running government from
+inside it — and both, in their different ways, evidence against reading
+Deccan queenship as purely ornamental.</p>
+<h2 id="sec-vii"><span class="roman">VII.</span> What the land actually paid</h2>
+<p>Behind every campaign already traced — Dhruva’s ride to Kannauj,
+Govinda III’s two fronts, Krishna III’s pillar at Rameshwaram — sat a
+quieter, less glamorous machinery: the actual collection of revenue from
+actual villages, recorded in a vocabulary technical enough that even
+careful modern readers of the inscriptions have had to reconstruct its
+meaning term by term rather than simply read it off the stone.</p>
+<p>Two pairs of words carried almost the whole weight of Deccan land
+taxation in this period. <strong>Udranga</strong> and
+<strong>bhagakara</strong> described the same thing — the ordinary land
+tax itself, the share Sanskrit legal literature imagined the king living
+on: a sixth part of the produce, the <em>shashthamsha</em>, repeated
+often enough across the Smriti texts that inscriptions using either term
+are now read as functionally identical.<sup>54</sup>
+<strong>Uparikara</strong> and <strong>bhogakara</strong>, similarly
+interchangeable, described something else: not the base tax but an
+additional impost layered over it — literally, <em>upari</em>, “above” —
+usually paid in kind rather than cash, and usually small: betel leaves,
+fruit, vegetables, the kind of daily present a king or his officers
+might expect while on tour rather than a formal annual
+levy.<sup>55</sup> Manu’s own law code, in the passage a later
+commentator glossed as <em>pratibhagam</em>, describes exactly this:
+“daily presents in the form of fruits, flowers, vegetables, grass” —
+offered, in practice, not to the crown directly so much as to the local
+officers these small taxes were routinely assigned to as part of their
+pay.<sup>56</sup> A useful way to hold the distinction:
+<em>udranga/bhagakara</em> was the state’s due;
+<em>uparikara/bhogakara</em> was closer to a tip, formalised into
+law.</p>
+<p>How much the base tax actually took is where the sources start to
+argue with each other. Theorists across several centuries offered rates
+ranging from eight to sixteen per cent on one telling, up to fifty per
+cent on another. The <em>Arthashastra</em> permitted land taxation
+between sixteen and fifty per cent, with irrigated land taxed more
+heavily than dry, on the reasoning that the total burden — tax plus cost
+of production — should roughly double the farmer’s outlay on the best
+land.<sup>57</sup> Sukra, writing later, simply fixed the figure at a
+flat twenty-five per cent. Chandeshvara, a medieval commentator, took
+the more elastic view that the famous “sixth part” was never meant
+literally at all — that <em>shadbhaga</em> was figurative shorthand for
+whatever amount a king needed, provided it did not become oppressive to
+his subjects.<sup>58</sup> Reconciling theorists this far apart is
+probably the wrong project; more useful is to look at what real villages
+actually paid, where the number survives.</p>
+<p>One does, precisely, in an inscription from Bevinahalli in the old
+Chitaldurg district of Mysore state, dated to the reign of Khottiga. It
+records that two villages, Madlur and Malagavadi, together yielded fifty
+<em>gadyanas</em> in annual revenue — petty in-kind taxes explicitly
+excluded from the figure. A <em>gadyana</em> equalled two
+<em>kalanjus</em>, and a <em>kalanju</em> was a gold coin weighing
+roughly a quarter of a <em>tola</em>, somewhere between forty-five and
+fifty grains. Fifty <em>gadyanas</em>, worked through, comes to about
+twenty-five <em>tolas</em> of gold as the annual government take from
+two villages — a real, dated, named number, rarer in the record than the
+theorists’ percentages.<sup>59</sup></p>
+<p>A second inscription, from Tuppad Kurahatti, supplies a rate that can
+actually be checked against acreage. It records that Tondayya, the
+country <em>gamunda</em> of Belvola Three Hundred, and six village
+<em>gamundas</em>, granted land to a temple: fifty <em>mattars</em> of
+land and one <em>mattar</em> of garden, with the fixed revenue set at
+two <em>gadyanas</em> for the field and two more for the garden — four
+golden <em>gadyanas</em> in total, roughly two <em>tolas</em> of gold,
+or ninety <em>tolas</em> of silver.<sup>60</sup> The dimensions of a
+<em>mattar</em> varied by locality, frustratingly, but comparison with
+grants elsewhere — a Brahmana household’s subsistence needs at Mangoli,
+a Shilahara prince’s three-different-<em>mattar</em> grant made on a
+single occasion in three different places — suggests a <em>mattar</em>
+at Tuppad Kurahatti of somewhere around four to five acres, putting the
+fifty <em>mattars</em> at roughly two hundred acres.<sup>61</sup> On
+that reading, the taxation works out to about one <em>tola</em> of gold
+per hundred acres — a low figure, though it may simply reflect that this
+particular grant was a nominal <em>devadaya</em> quit-rent to a temple
+rather than the ordinary government demand, and that the land itself was
+of poor quality.</p>
+<p>Temple land, in fact, was consistently taxed at a discount, and one
+comparison makes the pattern explicit rather than merely inferred. Under
+the Cholas, the average government demand on ordinary land ran to about
+a hundred <em>kalams</em> of paddy per <em>veli</em>; an inscription
+from Konerirajapuram records that twelve <em>velis</em> of temple land
+in the same locality were charged only six hundred <em>kalams</em> —
+half the going rate.<sup>62</sup> Even so, a record from Honawad in
+Dharwar district, dated 1054 CE, shows a king named Someshvara granting
+ordinary dry land to a temple at a rent of only half a <em>pana</em> per
+<em>mattar</em> — a figure so far below even the discounted temple rate
+that it reads less like tax policy than an act of personal piety, priced
+deliberately low, a king buying spiritual credit at a rate no ordinary
+farmer would ever be offered.<sup>63</sup></p>
+<p>None of this adds up, in the end, to a single clean number for what
+Rashtrakuta subjects paid the state. What it adds up to instead is a
+system flexible enough to run several different rates simultaneously —
+full commercial demand on ordinary cultivators, halved rates on temple
+endowments, near-nominal quit-rents on royal piety-grants — administered
+through a vocabulary precise enough that a <em>gamunda</em> and a king’s
+officer both understood exactly which category a given field fell into,
+even where the underlying acreage itself refused to sit still from one
+district to the next.</p>
+<h2 id="sec-viii"><span class="roman">VIII.</span> What Manyakheta actually sold</h2>
+<p>Sulaiman al-Tajir's assessment, generous as it was, was not
+sentiment. Arab merchants rated the Rashtrakutas among the world's great
+powers because doing business with them was, in the most literal sense,
+worth the journey — and the goods that made it worth the journey were
+specific, various, and moved through a network that reached the western
+ports whether or not the capital itself ever saw the sea.</p>
+<p>The Deccan under Rashtrakuta rule sat on and near some of the most
+productive mineral ground in the subcontinent. Diamonds came from the
+fields around Cudappah, Bellary, and Kurnool, in the same broad belt
+that would later make Golconda synonymous with the stone in European
+markets centuries afterward.<sup>22</sup> Copper was mined across a wide
+arc of the empire — Cudappah and Bellary again, but also Chanda,
+Buldhana, Narsingpur, Ahmadnagar, Bijapur, and Dharwar — a spread wide
+enough that no single mine or district held a monopoly on the metal, and
+disruption in one region would not have starved the trade
+entirely.<sup>23</sup> Cotton was the great staple of the north-western
+reaches of the empire, grown across southern Gujarat, Khandesh, and
+Berar, spun into yarn and cloth that travelled outward through the port
+of Bharoch — the same Barygaza the <em>Periplus</em> had named in
+describing Indo-Roman trade eight centuries earlier, still functioning,
+still moving goods, long after the empire that first made it famous had
+vanished.<sup>24</sup> The finest cotton calicos, woven around Burhanpur
+and across Berar, travelled further than almost anything else traced so
+far: west to Persia and Arabia, on to Turkey and Cairo, and by some
+accounts as far as Poland — a genuinely transcontinental reach for cloth
+spun in the Deccan interior.<sup>25</sup></p>
+<p>Other regions supplied other things. The Konkan coast, under its own
+Silhara feudatory dynasty, produced betel leaf, coconut, and rice for
+both local consumption and export. The forests of Mysore, under Ganga
+feudatories, supplied sandalwood, timber, teak, and ebony, and the same
+region's elephant population fed a genuine ivory-working
+industry.<sup>26</sup> Leather and tanning were concentrated in Gujarat
+and northern Maharashtra. Incense and perfumes moved out through the
+ports of Thana and Saimur, on the same western coastline that had
+carried Roman gold to Banavasi and would go on, within a few centuries,
+to carry the Ayyavole 500's own ships toward Sumatra.<sup>27</sup> Four
+ports in particular anchored this whole western trade: <strong>Bharoch,
+Thana, Sopara, and Chaul</strong>, each with its own centuries-deep
+history reaching back through the Satavahanas to the Periplus
+itself.<sup>28</sup></p>
+<p>None of this moved through hostile or merely tolerated foreign
+merchants. The Arab trading community on this coast was formally
+accommodated rather than simply endured: coastal towns maintained
+<strong>their own Muslim headman</strong>, and had genuine access to
+mosques for daily prayer — an explicit administrative accommodation, not
+an absence of persecution.<sup>29</sup> This matters for how Sulaiman's
+own account should be read. He was not writing as an outsider peering in
+at a closed society from the deck of a ship. He was describing a trading
+world his own countrymen were embedded in, with recognised leaders,
+recognised places of worship, and — on the evidence of how favourably he
+wrote about the Balhara — recognised standing. Ibn Khordadbih and
+al-Istakhri, writing separately, describe the same accommodation; three
+independent geographers, describing the same welcome, is not
+coincidence. It is a state that had worked out, deliberately, how to
+make foreign merchants want to keep coming back.</p>
+<p>Muslims were not the only foreign trading community this coast made
+room for. Further south, at Cranganore — known to its own Jewish
+residents as Shingly — a Jewish merchant community traced its presence
+back centuries, and by tradition received from a Chera king one of the
+most striking land-grant documents to survive from the period: a set of
+copper plates conferring on a merchant named <strong>Joseph
+Rabban</strong>, possibly a Yemeni Jew by origin, something close to
+lordship over the trading community of Anjuvannam, along with an
+extensive list of hereditary privileges — tax exemptions, ceremonial
+honours, and the right to be carried in a palanquin, ordinarily a mark
+of royal rank.<sup>29b</sup> Cranganore’s port silted shut in a
+catastrophic flood in 1341; its Jewish community relocated to Cochin so
+quickly that a new synagogue stood within four years, evidence of an
+institution moving its whole life downstream rather than dissolving with
+the harbour that had once supported it.<sup>29c</sup> The trade this
+community ran is not merely legend. Letters recovered from the Cairo
+Geniza — the storeroom of a Fustat synagogue where worn-out documents
+bearing God’s name were never destroyed, only shelved — describe, in the
+traders’ own handwriting across the eleventh to thirteenth centuries, an
+Arabic-speaking Jewish network moving spices, pharmaceuticals, textiles,
+and precious metals in direct partnership with Hindu merchants on this
+same coast. One of those correspondents, a twelfth-century trader named
+Abraham Ben Yiju, ran an iron business out of Mangalore for nearly two
+decades, married locally, and left behind a paper trail detailed enough
+to reconstruct entire shipments — a story substantial enough to deserve
+its own telling elsewhere in this account, rather than a summary
+here.<sup>29d</sup></p>
+<a class="callout-card" href="callouts/eight-merchants-callout.html" target="_blank">
+  <span class="cc-tag">Companion piece — Trade &amp; Logistics</span>
+  <p class="cc-title">Eight Merchants, Eight Horizons</p>
+  <p class="cc-desc">A 779 CE guild reception at Sopara, preserved by accident in a Prakrit romance — eight traders naming exactly where they went and what they carried, with every destination's modern location.</p>
+  <span class="cc-link">Read the full scene &rarr;</span>
+</a>
+<h2 id="sec-ix"><span class="roman">IX.</span> Guild, bank, and blade</h2>
+<p>Sulaiman al-Tajir’s Deccan did not move its cotton, its copper, and
+its diamonds through solitary merchants each striking his own bargain.
+It moved them, overwhelmingly, through guilds — corporate bodies old
+enough by the ninth and tenth centuries that inscriptions describing
+them read less like the founding of something new and more like the
+ordinary, unremarkable furniture of Deccan commercial life.</p>
+<p>Guilds of this kind were not a Rashtrakuta invention; the
+inscriptions describing them are simply the moment the institution
+becomes visible in stone. As early as the Andhra period, centuries
+before Manyakheta existed, the whole of the Deccan was already spread
+with a network of guilds regulating trade and industry, training
+apprentices, and conducting banking business not only for their own
+members but for the general public — meaning the guild infrastructure
+the Rashtrakutas inherited and taxed had already been running, in some
+form, for the better part of a millennium before Amoghavarsha ever sat
+the throne.<sup>64</sup></p>
+<p>A weavers’ guild at Laxmesvar, recorded around 775 CE, had already
+agreed among its own membership to make a fixed contribution toward a
+religious object — evidence of an organisation old enough, and cohesive
+enough, to bind its members to a collective financial
+commitment.<sup>65</sup> A later inscription from Mulgund, dated around
+880 CE, records something larger still: a gift made by four heads of a
+guild whose membership, on the most plausible reading, was spread across
+three hundred and sixty separate towns and villages, with the grant
+itself made with the consent of two thousand merchants connected to the
+same body.<sup>66</sup> Whether those two thousand were the guild’s full
+membership or simply its most prominent local branch is impossible to
+settle from the stone alone — but either reading describes an
+organisation operating at a genuinely regional scale, coordinating
+consent across hundreds of settlements for a single religious
+donation.</p>
+<p>Later inscriptions, admittedly falling just outside the Rashtrakuta
+centuries proper, describe guilds bigger still, and are worth citing
+here as evidence of an institutional trajectory already well underway.
+An inscription from Belgamve, dated 1083 CE, describes a guild that
+ruled over, or maintained offices in, eighteen cities, governed by an
+executive of nine.<sup>67</sup> One from Managoli, dated 1161 CE,
+records grants made jointly by the guilds of oilmen, weavers, artisans,
+basket-makers, mat-makers, and fruit-sellers — six distinct trade
+bodies, acting in concert, in a single locality.<sup>68</sup> And two
+records published only recently at the time of writing — one from
+Kolhapur, one from Miraj, both eleventh-century — describe a guild of
+the <strong>Vira Balanjus</strong>, “heroic merchants,” whose membership
+extended across four separate districts, governed by an executive of
+fifteen.<sup>69</sup> Vira Balanjus is not a separate organisation from
+the guild this whole account has already gestured toward once or twice
+without naming: it is simply the Kannada-region name for the same body
+known elsewhere as Ayyavole, or Ainnurruvar, or the Five Hundred of
+Aihole — a guild whose own story, and its remarkable second life under
+the Cholas, belongs to a later part of this series. Every guild
+recorded, in other words, seems to have had a formal executive body, its
+size scaling roughly with the guild’s own membership and reach — a
+detail corroborated independently by literary sources such as the
+<em>Yajnavalkyasmriti</em> and the <em>Nitivakyamrita</em>, which
+describe exactly this kind of executive committee as standard guild
+practice rather than local eccentricity.<sup>70</sup></p>
+<p>Guilds of this size needed to look, and act, like corporate bodies
+with real coercive weight — and the record shows they did. The Vira
+Balanjus carried a banner bearing the device of a hill, described
+explicitly in inscription; a guild at Dambal, similarly — again in a
+record from outside the Rashtrakuta centuries proper, this one by some
+four to six decades, under the Western Chalukya king Jagadekamalla, who
+reigned roughly 1018 to 1040 CE, well after Manyakheta itself had
+already passed into Western Chalukya hands — is recorded using its own
+umbrellas and <em>chauris</em>, ceremonial fly-whisks ordinarily a mark
+of royal or divine status, obtained under Jagadekamalla’s own royal
+charter.<sup>71</sup> The same Dambal inscription styles the guild “lord
+of Aihole, the best of towns” — a striking title for a merchant body to
+claim, and one that gestures directly toward the very town whose own
+name a much larger merchant confederation would go on to carry as
+identity in the centuries that followed; the guild’s own roots, on the
+independent evidence of its earliest surviving inscriptions, already
+reached back into the eighth century, meaning it was already old news by
+the time this Dambal charter was issued, however many decades that falls
+past the Rashtrakuta dynasty’s own fall.<sup>72</sup> The
+<em>Harivamsha</em> itself, already cited for its glimpse of feudatories
+seeking royal approval, independently describes guild members processing
+under banners bearing the actual implements of their trade — proof, when
+set against the Belgamve and Kolhapur inscriptions describing the Vira
+Balanjus’ hill-device banner, that the epic’s detail was not literary
+invention but a fair description of real practice.<sup>73</sup> Some of
+the largest guilds, on this evidence, were entrusted by the state with
+something closer to municipal government: towns handed over, on
+occasion, as security against loans a guild’s own bank had advanced to a
+debtor state — meaning a guild bank’s balance sheet could, in effect,
+determine who governed a city.<sup>74</sup></p>
+<p>None of this authority came unarmed. Guilds of this size maintained
+their own militias — a natural corollary, given how much of their wealth
+moved on the roads between one town and the next, and how easily an
+unguarded caravan invited plunder. A later observer, writing under
+Muslim rule, records each cart in a merchant caravan protected by four
+soldiers, each paid four rupees a month; broadly comparable precautions
+almost certainly applied earlier as well, and even ordinary village
+communities of this same period are recorded maintaining their own
+militias for exactly the same reason.<sup>75</sup> Guild soldiers, on
+the surviving evidence, were not decorative escort. A fifth-century
+inscription from far to the north, at Mandsor, describes members of a
+guild there as expert archers, bold enough to forcibly uproot an enemy
+in battle — language that reads less like ceremonial boilerplate and
+more like a genuine description of men who had actually
+fought.<sup>76</sup></p>
+<p>And behind the militias and the banners sat the institution that made
+a guild worth joining in the first place: the guild bank. These were, on
+the evidence of the period, among the most stable financial institutions
+the Deccan possessed, trusted enough that depositors accepted a fixed,
+perpetual rate of interest in exchange for capital the guild could never
+be asked to return in full. A Kanheri inscription datable to
+Amoghavarsha I’s own reign records a specific investment on which the
+guild bank had agreed to pay interest in perpetuity — with the rate
+itself, tellingly, left to be fixed “by experts from time to time,” a
+hedge against exactly the kind of adverse money-market conditions no
+fixed clause could safely anticipate a century in advance.<sup>77</sup>
+Village communities, separately, ran their own comparable banks, and
+private individuals almost certainly conducted ordinary banking business
+alongside both. Between guild banks and village banks together, the
+Deccan of this period possessed a genuinely dispersed financial system —
+decentralised in exactly the way its political administration, with its
+layered permissions running down from Manyakheta through Rashtra,
+Vishaya, Nadu, and Grama, was not.</p>
+<h2 id="sec-x"><span class="roman">X.</span> What a coin could buy</h2>
+<p>Oddly, for a dynasty whose reach and reputation are beyond serious
+dispute, not a single coin has yet been found that belongs indisputably
+to the Rashtrakuta royal house itself. Silver coins bearing the legend
+<em>Paramamahesvara-mahadityapada… nirdhyata-Sri-Krishnarajah</em> were
+once attributed, tentatively, to Krishna I — but the coins imitate the
+latest Gupta issues from the same region so closely, and are undated in
+a way genuine Rashtrakuta silver coinage was not, that the attribution
+no longer holds.<sup>78</sup> Reconstructing the dynasty’s own monetary
+world, in other words, has to be done almost entirely by working
+backward from indirect evidence — from the coin-denominations named,
+rather than pictured, in inscriptions.</p>
+<p>Five coin-names recur across the record: <strong>dramma</strong>,
+<strong>suvarna</strong>, <strong>gadyanaka</strong>,
+<strong>kalanju</strong>, and <strong>kasu</strong>. <em>Dramma</em> is
+simply the Sanskritised Greek <em>drachme</em>, inherited via the silver
+coinage of the Indo-Bactrian kings, itself weighing around sixty-five
+grains — a loanword surviving in active use many centuries after the
+Greek kingdoms that first minted it had vanished from India
+entirely.<sup>79</sup> <em>Suvarna</em> denoted, in strict theoretical
+terms, a golden coin of eighty <em>raktikas</em>, roughly a hundred and
+forty-six grains — the unit the Imperial Guptas had once tried to
+restore as a national standard in the mid-fifth century — but no coin of
+that weight has ever been found belonging to the Deccan of this period;
+the golden coins actually in circulation ran closer to forty-five to
+fifty-five grains, suggesting the word <em>suvarna</em>, where it
+appears in southern records like the Cambay plates of Govinda IV, had
+drifted to mean simply “the current gold coin,” whatever its literal
+weight, rather than the specific Gupta-era standard.<sup>80</sup>
+<em>Kalanju</em> — the name, curiously, of a prickly climbing plant
+whose seed weighs between forty-five and fifty grains — was the
+workhorse gold coin of Karnataka and Tamil country alike, averaging
+around a quarter of a <em>tola</em>.<sup>81</sup> <em>Gadyanaka</em>
+equalled two <em>kalanjus</em>, roughly ninety grains, comparable to the
+eight-anna piece still in everyday circulation when Altekar himself was
+writing in the 1930s — a coin retired from Indian currency in 1957 and
+unfamiliar to a reader today; seven <em>kalanjus</em> equalled twenty
+<em>kasus</em>, putting a single <em>kasu</em> at about fifteen grains
+of gold.<sup>82</sup> Two smaller denominations completed the ladder:
+the <em>manjadi</em>, one-twentieth of a <em>kalanju</em> at roughly two
+and a half grains, and the <em>akkam</em>, one-twelfth of a
+<em>kasu</em> at about one and a quarter grains — coins small enough
+that a single one would have bought very little on its own, and existed
+chiefly to make change.<sup>83</sup></p>
+<p>A useful table, assembled from the epigraphical record, gives the
+approximate weight and rough early-twentieth-century rupee equivalent of
+each: the silver dramma at sixty-five grains, worth about six annas; the
+gold dramma, same weight, worth roughly seven rupees; the kalanju at
+forty-eight grains, about five rupees; the gadyanaka at ninety-six
+grains, about ten rupees; the kasu at fifteen grains, about ten annas;
+the manjadi at two and a half grains, about one anna ten pies; the akkam
+at just over a grain, about two annas.<sup>84</sup> A modern reader can
+find these same weights more legible priced against today’s bullion
+market rather than a colonial-era rupee: at recent spot prices of
+roughly A$188 a gram for gold and A$2.70 a gram for silver, a kalanju
+comes to around A$585, a gadyanaka to around A$1,170, a kasu to around
+A$183, a gold dramma to around A$792, its silver counterpart to a
+comparatively modest A$11, a manjadi to around A$31, and an akkam to
+around A$15.<sup>84b</sup> The ratio between the two metals has itself
+moved a long way: the period’s own sources put gold at somewhere near
+fifteen times the price of silver by weight, where the current market
+runs closer to seventy times — silver, in other words, has grown roughly
+five times cheaper relative to gold since the Rashtrakutas were minting
+neither metal into coin bearing their own name.<sup>84c</sup> Nearly all
+of this coinage, it is worth noting, was gold — the dramma the sole
+significant silver exception — meaning the Deccan of this period ran an
+economy in which even relatively modest transactions were conducted,
+formally at least, in a precious metal now reserved for jewellery and
+reserve holdings rather than daily change.</p>
+<p>Not every transaction used coin at all. Where royal revenues were
+assigned to officers or feudatories, payment often ran wholly or partly
+in kind, and the government’s own transactions — on the evidence of
+comparable practice in Tamil country — appear to have run substantially
+on barter rather than currency.<sup>85</sup> Where cash did change
+hands, the record is unusually generous with the price of borrowing it.
+The normal rate of interest on cash capital, across the great majority
+of surviving records, ran between twelve and fifteen per cent — a figure
+Manu, Yajnavalkya, and Kautilya all independently converge on as the
+legally sanctioned rate, epigraphy here corroborating the Smritis rather
+than contradicting them.<sup>86</sup> Debtors judged good credit risks
+paid rather more: something like twenty to twenty-four per cent, on the
+inference that banks offering their best depositors twelve to fifteen
+per cent in perpetuity needed a wider margin on what they lent out.
+Ordinary credit ran closer to thirty per cent; poor credit, thirty to
+fifty. Manu’s own law code makes the class dimension of this explicit
+rather than incidental: a lender charging twenty-four per cent from a
+Brahmana was, in Manu’s own words, not guilty of sin — and the same text
+permits successively higher rates against Kshatriyas, Vaishyas, and
+Shudras, thirty-six, forty-eight, and sixty per cent respectively, on
+the reasoning, made nowhere delicately, that lower-status borrowers
+offered correspondingly weaker security.<sup>87</sup> Capital advanced
+in grain rather than cash commanded a still steeper rate — Kautilya
+permits fifty per cent on capital in grain, and Manu, Yajnavalkya, and
+Vasishtha, who forbid interest on cash capital ever exceeding the
+principal itself, allow interest on corn to run as high as double the
+loan — a policy logic the epigraphical record confirms independently:
+recorded rates on corn advanced by village communities cluster between
+twenty-five and fifty per cent, roughly twice the normal cash
+rate.<sup>88</sup> Occasional records show rates spiking far higher
+still — one Bana inscription of 915 CE records twenty-five per cent on a
+straightforward loan, and a temple at Annamalai arranging to pay its own
+creditors an effective forty per cent, a rate the record itself flags as
+exceptional, plausibly reflecting urgent need rather than ordinary
+market pricing.<sup>89</sup></p>
+<p>None of this is legible without knowing what the money could actually
+buy, and here the record turns unexpectedly rich, thanks largely to a
+cluster of Chola-adjacent inscriptions from the very end of the tenth
+century that priced ordinary goods with a precision inscriptions rarely
+bother with. Rice sold at around thirty <em>seers</em> to the rupee.
+Good ghee ran roughly one <em>kalanju</em> for thirty-two <em>naris</em>
+— about two and a half <em>seers</em> to the rupee — with inferior ghee
+proportionately cheaper, at closer to four and a half. Oil, priced
+against paddy at roughly a <em>tuni</em> per <em>nari</em>, worked out
+costlier than good ghee: a striking reversal of the modern relationship
+between the two, which suggests oilseed cultivation in this period was
+markedly less developed than it later became. Salt sold cheaply, at
+about seventy-five <em>seers</em> to the rupee — a ratio to rice much
+the same, curiously, as today. Pepper, by contrast, cost roughly twelve
+times as much as rice, a mark-up substantial enough to explain why it
+had been worth carrying halfway across the world in Roman ships,
+centuries earlier, to the very ports this whole account has already
+traced.<sup>90</sup> Camphor cost more still, relative to its modern
+price, than almost anything else in the table: a full tola running to
+something over two rupees, a price the record explains directly —
+camphor had to be imported from abroad, across seas where piracy was a
+genuine hazard, and merchants financing the trade reportedly borrowed at
+interest rates as steep as a hundred and twenty per cent to fund a
+single shipment, a number that makes the ordinary
+twelve-to-fifteen-per-cent bank rate look almost restful by
+comparison.<sup>91</sup> “Abroad” meant, specifically, one place: almost
+none of the camphor moving through Deccan markets grew anywhere near
+India at all. The finest grade came from a single stretch of Sumatra’s
+north-western coast, a port the Arabs called Fansur — Sulaiman al-Tajir
+himself names it, in the very same account already quoted at the start
+of this whole story — and later Persian and Egyptian writers repeat the
+same identification for centuries afterward. A single aromatic, in other
+words, had to travel from a specific patch of Sumatran forest, through
+the same Arab shipping network already described reaching Egypt, Persia,
+and Arabia, before it could reach a Deccan buyer willing to pay two
+rupees a tola for it — one of the clearest possible illustrations of
+just how far this trading world actually reached, stitched together long
+before anyone called it “Indian Ocean trade.” Sugar, cardamom, cumin,
+mustard, and plantains all appear in the same records, each priced
+against paddy or rice with the same careful arithmetic, together
+sketching a food economy in which staples were cheap, spices dear, and
+imported luxuries dearer still — a hierarchy of price the whole trading
+network already described in this account existed, in large part, to
+service. Rice itself, though, was not a neutral staple in this hierarchy
+so much as a status marker with a price attached. Archaeobotanical work
+on the Deccan and further south shows millets — ragi and its relatives —
+as the older, more widely grown staple across this whole period, feeding
+the great majority of the population; rice, harder to grow across most
+of the plateau and correspondingly costlier, functioned as the
+aspirational grain, disproportionately eaten by Brahmanas and by the
+wealthy rather than the population at large. The distinction shows up in
+the vocabulary later observers used for the two grains as much as in the
+archaeology: rice as the pearl-pale, prestige food; millet, duller in
+colour, as the food of everyone else. None of this changed quickly. What
+did survive, in enough detail to be useful here, is the closest thing to
+a menu the Deccan of this period ever produced for its own elite: the
+<em>Manasollasa</em>, composed in 1129–30 CE by King Someshvara III of
+the Western Chalukyas, the dynasty that inherited Manyakheta itself and
+governed the same Rashtrakuta heartland roughly a century and a half
+after the empire’s own fall. It is not Rashtrakuta-era evidence in the
+strict sense — no comparably detailed food text survives from the
+Rashtrakutas’ own two centuries — but it is the nearest thing to one:
+written by the empire’s direct territorial successors, in the same
+Deccan, describing food culture that cannot plausibly have reinvented
+itself wholesale in a hundred and fifty years. The text lays out a core
+two-course royal meal built almost entirely around rice: one course of
+rice covered with meat, a second of boiled rice served with soft mung
+beans and ghee poured over it — the same rice-and-clarified- butter
+grammar that shows up, centuries later and hundreds of kilometres away,
+in Ibn Battuta’s own account of Deccan hospitality, suggesting a
+structure of elite Deccan dining considerably more durable than any
+single dynasty that happened to preside over it.<sup>91b</sup></p>
+<p>Wages, set against these prices, tell a story of real if modest
+comfort for the salaried classes the record happens to describe. A
+temple account from Tanjore gives an actual pay scale: an accountant
+earning two hundred <em>kalams</em> of paddy a year, a sub-accountant
+seventy-five, a carpenter-master a hundred and fifty, a temple watchman
+a hundred, a drawer of water sixty, and a temple <em>brahmacharin</em>
+sixty-one plus four or five <em>kasus</em> in cash.<sup>94</sup> Against
+a documented subsistence cost of around twenty <em>kalams</em> a year
+for an ordinary meal, or thirty-seven and a half for a genuinely good
+one, most of these wages sat comfortably above bare subsistence — the
+accountant and the carpenter-master, in particular, earning several
+times what a family of five actually needed to eat well. The
+sub-accountant, on seventy-five <em>kalams</em>, sat closer to the
+margin, though the record itself suggests this reflected a junior
+position early in a career rather than a permanent hardship — men in
+this post were, by the pattern of the records, expected to be promoted
+in due course.<sup>95</sup> Land itself, priced against its own annual
+yield, followed a broadly consistent logic across several separate
+inscriptions: tax-free land, granted for endowments such as a perpetual
+temple lamp, cost around four times its annual net produce, implying an
+effective return on the purchase price of roughly twenty-five per cent —
+a figure that sits, not coincidentally, close to the higher end of the
+ordinary interest-rate range already described, land and capital pricing
+themselves, in this economy, against broadly the same
+yardstick.<sup>96</sup></p>
+<h2 id="sec-xi"><span class="roman">XI.</span> What the philosophers argued about, while the merchants
+worked</h2>
+<p>It is worth pausing the political and economic narrative here,
+because the ninth and tenth centuries in the Deccan were not only an age
+of kings and cotton. They were also, by coincidence of timing rather
+than design, one of the most argumentative periods in the whole history
+of Indian philosophy — and the argument itself had a direct, structural
+bearing on how merchants understood their own place in the world.</p>
+<p>The question at the centre of it was old already. The <em>Rig
+Veda</em>'s own creation hymn, composed well over a thousand years
+before any king mentioned so far, had asked "who really knows?" of the
+universe's origin without pretending to answer.<sup>30</sup> By the
+sixth century BCE, that open question had hardened into genuine
+positions: Mahavira founding Jainism on a universe without a creator
+god, governed instead by natural law and the accumulated weight of
+karma; the Buddha founding a parallel tradition on rebirth without a
+permanent soul; and, in the same decades, a philosopher named
+<strong>Ajita Kesakambala</strong> stating flatly that death was
+annihilation and that alms-giving was foolishness — the earliest named
+Indian thinker to argue not mere doubt but outright materialist
+atheism.<sup>31</sup> Panini formalised the vocabulary in the fourth
+century BCE, defining <em>nastika</em> ("one who does not believe") in
+his grammar; Kautilya's <em>Arthashastra</em>, not long after, listed
+Samkhya, Yoga, and <strong>Lokayata</strong> — the materialist school
+descending from Ajita's line of argument — together as legitimate
+schools of "critical inquiry," worthy of a king's own
+education.<sup>32</sup></p>
+<p>By the time Amoghavarsha I sat on the Manyakheta throne, this
+argument was not archival. It was live, and two of its sharpest voices
+were near-exact contemporaries, working in roughly the same world
+already described here. <strong>Adi Shankara</strong> (c. 788–820 CE),
+the great consolidator of Advaita Vedanta, wrote refutations
+specifically targeting the Lokayatikas — meaning materialist atheism
+remained enough of a genuine threat to orthodox Vedanta, seven centuries
+after Ajita Kesakambala, that the tradition's most influential
+systematiser still felt obliged to argue against it rather than dismiss
+it.<sup>33</sup> And <strong>Jinasena</strong> — Amoghavarsha's own
+guru, already introduced through the <em>Adipurana</em> he left
+unfinished at his death — wrote his own flat denial of a creator god:
+that some foolish men declare the world was made by a creator, and that
+such a doctrine should be rejected.<sup>34</sup> The king's own
+spiritual teacher and the era's greatest Vedantic philosopher were, on
+this specific question, on opposite sides of a live and unsettled
+argument — and Amoghavarsha ruled, by every account, comfortably in the
+middle of it.</p>
+<p>This mattered to merchants specifically, and not abstractly. Orthodox
+Brahmanical law placed traders — the Vaishya varna — third of four
+ranks, below Brahmins and Kshatriyas, and the Dharmasutras explicitly
+denounced money-lending, one of the core financial activities any
+serious trading operation eventually needs.<sup>35</sup> Jainism and
+Buddhism did neither. Both rejected caste hierarchy outright, and
+neither doctrine treated commerce or lending as spiritually compromising
+— a natural fit, in the Jain case, with the principle of
+<em>ahimsa</em>, since trade caused less direct violence than farming
+(which kills insects, disturbs soil) or than the animal sacrifice still
+central to much orthodox Vedic ritual. Wealthy merchants —
+<em>setthis</em>, the same word already met through Bhutapala at Karla —
+became the two traditions' major patron class precisely because those
+traditions offered status a Vaishya could never fully claim inside the
+Vedic system.<sup>36</sup> It is worth noting, too, that the historian
+R.S. Sharma has argued the Gupta Empire itself, centuries before any
+dynasty covered here, was effectively a <strong>merchant-class
+dynasty</strong> rather than a warrior one — a reminder that the tension
+between trade wealth and traditional Kshatriya legitimacy was never
+fully resolved anywhere in Indian history, only managed differently by
+different courts.<sup>37</sup></p>
+<p>Ajanta itself, several centuries before Manyakheta existed, offers
+the clearest physical proof of how directly this doctrinal accommodation
+translated into architecture. The earliest caves there, cut under
+Satavahana patronage between roughly 100 BCE and 100 CE, were funded by
+guilds and merchants using the very trade corridor running past the site
+— the road linking Ter, Pratishthana, Bhogavardhana, and Ajanta itself
+to Ujjain further north.<sup>38</sup> Merchant money built Buddhist
+monastic architecture because Buddhist monastic architecture, unlike
+orthodox Vedic ritual space, had no doctrinal objection to merchant
+money. By the later Vakataka phase, roughly 460–480 CE, patronage had
+shifted toward royalty — King Harishena, his minister Varahadeva, the
+local ruler Upendragupta — but merchant donation continued alongside
+royal funding until the trade route itself went quiet around 470 CE,
+when Gupta control of the western ports lapsed.<sup>39</sup> Cave 1 at
+Ajanta, already visited in Part II for its painted depiction of
+Pulakeshin II's Persian embassy, belongs to this royal phase — meaning
+the very painting used earlier to illustrate Chalukya diplomacy was paid
+for at almost the exact moment the road that built the older caves was
+falling silent.</p>
+<p>The philosophical argument did not stay confined to monasteries and
+royal courts, either. It surfaces, sharpened into satire, in a text
+written within a generation of Amoghavarsha's death, at the court of one
+of the Rashtrakutas' own minor feudatories. <strong>Somadeva</strong>,
+writing his <em>Yasastilaka</em> in 959 CE under the Vemulavada
+Chalukyas — a small feudatory branch distinct from both the Badami and
+Kalyani Chalukya lines already covered — populated his narrative with a
+corrupt minister, <strong>Pamarodara</strong>, who robs temples, melts
+down idols, and murders servants to hide a scandal, then defends himself
+using genuinely Lokayata arguments: that ritual purity is mere
+convention, that there is, in truth, no real distinction between Brahmin
+and outcaste.<sup>40</sup> A Rashtrakuta-era author putting real
+materialist philosophy into a villain's mouth, as recognisable satire
+rather than abstract theology, is about as good evidence as survives
+anywhere that these arguments had genuinely entered ordinary cultural
+currency — not confined to specialist debate, but familiar enough to be
+a joke.</p>
+<p>The same feudatory court produced a figure who embodies the opposite
+of Pamarodara's cynicism: <strong>Munjaraya Vadighanghala
+Bhatta</strong>, a grammarian and political adviser to Krishna III
+himself, described as expert simultaneously in Lokayata, Samkhya,
+Buddhist philosophy, Vedic interpretation, and Jain doctrine — a genuine
+multi-tradition scholar-statesman, who reportedly took the Ganga king
+Butuga II, Krishna III's own tributary and the man who had killed the
+Chola prince Rajaditya at Takkolam, as his personal student in
+literature.<sup>41</sup> A warrior-king, in his off hours, studying
+poetry under a philosopher fluent in five competing traditions at once:
+as good a single image as any so far for what the Rashtrakuta court's
+intellectual life actually looked like, at the exact moment its armies
+were fighting from Kannauj to Rameshwaram.</p>
+<h2 id="sec-xii"><span class="roman">XII.</span> Where the grammar was taught</h2>
+<p>Sanskrit higher education, as the age understood it, meant a specific
+and demanding curriculum: the Veda itself, <em>Vyakarana</em> (grammar),
+<em>Jyotisha</em> (astronomy and astrology), <em>Sahitya</em>
+(literature), <em>Dharmasastra</em>, the Puranas, <em>Nyaya</em>
+(logic), and <em>Mimamsa</em> — a syllabus a donee at Dhulia, recorded
+in a grant of 779 CE, is explicitly praised for having mastered in full,
+alongside the <em>Vedangas</em>, <em>Nirukta</em>, and the
+technicalities of Vedic liturgy.<sup>97</sup> Of these subjects, grammar
+held pride of place. It was, in a formulation the period itself would
+have recognised, the key to every other branch of learning — and the
+near-total silence of the epigraphical record on any subject
+<em>other</em> than grammar, whenever a teacher’s own specialism happens
+to be named, suggests it was held in correspondingly high estimation, in
+the Deccan as much as further north.</p>
+<p>Not everyone agreed the esteem was earned. Adi Shankara, the
+philosopher traditionally dated to within or close to this same period,
+is said to have come across an old scholar in Varanasi still reciting
+Panini’s grammar by rote late in life, and to have composed, on the
+spot, one of his best-known verses in response: <em>bhaja Govindam,
+bhaja Govindam, Govindam bhaja mudhamate; samprapte sannihite kale, nahi
+nahi rakshati dukrinkarane</em> — “worship Govinda, you fool; when death
+draws near, grammar rules will not save you.” The jab lands with some
+precision: <em>dukrinkarane</em> is itself a fragment of Panini’s own
+grammar, the technical tag marking the sample root a student would drill
+first. Whether or not the story is literally true, it captures a real
+tension the Deccan’s own institutions never had to resolve: an
+educational culture that had built entire colleges around grammar’s
+primacy, answered, from elsewhere in the same broad era, by the age’s
+most influential philosophical voice telling a grammarian his life’s
+work would not help him at all.</p>
+<p>Formal education, in practice, ran through three separate
+institutional channels: <em>mathas</em> attached to temples and endowed
+by the state or by private charity; <em>agrahara</em> villages, granted
+wholesale to Brahmana settlements and expected, as a condition of the
+grant, to sustain teaching alongside worship; and standalone
+institutions, run by private individuals or by the wider village
+community with state and public help.<sup>98</sup> The Dharwar district
+<em>matha</em> at <strong>Kalas</strong>, recorded in a grant of 975 CE,
+illustrates the <em>agrahara</em> model at genuine scale: an endowment
+of fifty <em>mattars</em> — probably around two hundred acres —
+supported a Sanskrit college whose full complement of two hundred
+Brahmana households is described as versed collectively in grammar,
+works of polity, literary composition, the legendary lore, and the
+celebrated logic of the sage Ekakshara — the grant itself framed
+explicitly around maintaining this teaching establishment rather than
+simply endowing worship.<sup>99</sup></p>
+<p>The clearest single portrait of a functioning Deccan college, though,
+comes from <strong>Salotgi</strong>, a small village in Bijapur district
+whose very name records its own transformation: originally called
+Pavittage, it became “Salotgi” through the fusion of two words,
+<em>shala</em> and <em>pavitta</em> — school and Pavittage — a
+linguistic fossil preserving, inside the place-name itself, the memory
+of the institution that had made the village worth naming
+after.<sup>100</sup> An inscription from the locality places the
+college’s founding hall inside a building attached to the temple of
+Trayipurusha, built in 945 CE by Narayana, a minister of Krishna III —
+and states directly that the college drew students from far and near,
+requiring twenty-seven separate boarding houses to accommodate them, and
+running on an endowment of twelve <em>nivartanas</em> of land, probably
+around sixty acres.<sup>101</sup> A later inscription from the same site
+records that when the original 945-CE college hall eventually collapsed,
+it was rebuilt by a local feudatory chief — evidence that institutional
+continuity here mattered enough, across a change of immediate patron,
+that someone stepped in to rebuild rather than let the college simply
+lapse.<sup>102</sup></p>
+<p>Financing followed a mixed model throughout, part state and part
+private charity, with the <em>agrahara</em> system itself functioning as
+a form of indirect state subsidy: villages alienated wholesale to
+Brahmana communities, freed from ordinary revenue obligation, so that
+their inhabitants could devote themselves to the <em>ishtapurta</em> —
+the twinned religious duties of sacrifice and public benefaction — of
+which teaching was understood to be one branch.<sup>103</sup> Direct
+grants supplemented this indirect support. A record from Soratur, dated
+951 CE, shows an officer of the local division granting twelve
+<em>mattars</em> of land specifically to the <em>matha</em> and its
+educational function; a similar grant at Belur in 1022 CE gave twelve
+<em>mattars</em> to the <em>Mahajans</em> — the learned assembly —
+expressly for feeding and clothing local students; and at Habale, in
+Dharwar district, a private individual endowed five <em>mattars</em>
+purely for education in 1084 CE.<sup>104</sup> Even guilds joined the
+pattern: the same Dambal guild already met claiming the title “lord of
+Aihole, the best of towns” is separately recorded as maintaining a
+college of its own — a genuinely striking instance of merchant capital
+funding formal higher education directly, rather than simply patronising
+temples that happened to teach as a side effect.<sup>105</sup></p>
+<p>Primary education, at the level of the ordinary village, tells a
+different and less generous story. The grain-share system that supported
+a village’s resident carpenter, smith, and other permanent servants — a
+fixed annual allotment, paid by every villager at harvest —
+conspicuously did not extend to the teacher, whose services the
+community evidently did not regard as equally essential to ordinary
+public need.<sup>106</sup> Village teachers instead relied on fees paid
+annually at harvest time, scaled informally to a family’s means rather
+than fixed by any set schedule, supplemented by customary gifts in cash
+or kind at festivals such as Dasara or at the thread and marriage
+ceremonies held in his pupils’ houses — and, quite often, by a second
+income entirely, since the same village teacher frequently possessed
+some elementary knowledge of medicine and was employed writing letters,
+bonds, and leases for villagers who could not write their
+own.<sup>107</sup> It seems probable, on this evidence, that only the
+children of Brahmanas and of the trading classes cared enough about
+literacy to seek it out; the wider village community, whatever its own
+attitude to the teacher’s social value, plainly did not regard the three
+Rs as a necessary part of every citizen’s equipment, in the Deccan of
+this period any more than in most of the medieval world beyond
+it.<sup>108</sup></p>
+<p>Karnataka’s own literary confidence, already traced through the
+<em>ratnatraya</em> and through Amoghavarsha’s own authorship, sat
+inside precisely this institutional world — a college syllabus that put
+grammar first, an <em>agrahara</em> network wide enough to support two
+hundred Brahmana households at a single site, and a village-level system
+generous to smiths and carpenters but stingy toward literacy itself.
+Karnataka, in the same period, remained the great stronghold of Jainism,
+and its Jain authors had not forgotten that the religion’s own founder
+had preached in the vernacular rather than in Sanskrit — which goes some
+way toward explaining why so many of the Canarese authors already named,
+from Pampa through Ranna, were themselves practising Jains, carrying a
+doctrinal preference for the local tongue directly into the language’s
+earliest sustained literary output.<sup>109</sup> Marathi, by telling
+contrast, appears nowhere in the epigraphical record of this entire
+period; even its earliest known literary composition dates only to the
+third quarter of the tenth century, and serious cultured writing in the
+language would have to wait considerably longer still — a silence best
+explained by the simple fact that Marathi was neither the Rashtrakutas’
+own mother tongue nor a language Jainism, so dominant in Karnataka, had
+any particular reason to promote in Maharashtra.<sup>110</sup></p>
+<h2 id="sec-xiii"><span class="roman">XIII.</span> Three gems, a mathematician, and one dog</h2>
+<p>Kannada literature's own self-account, the <em>Kavirajamarga</em>,
+treats itself as arriving late to an already-crowded tradition — a text
+that names earlier Kannada poets whose actual work has since vanished,
+meaning the literary confidence on display under the Rashtrakutas was
+inherited, not invented from nothing. Amoghavarsha I himself may share
+authorship of that very text with his court poet Srivijaya; scholars
+remain divided on exactly how much of it is the king's own
+hand.<sup>42</sup> What is not disputed is that Amoghavarsha wrote at
+least one other book unambiguously his own: the <em>Prashnottara
+Ratnamalika</em>, a religious question-and-answer text later translated
+into Tibetan — meaning a Deccan king's own words travelled, in
+translation, further than most of his armies ever did.<sup>43</sup></p>
+<p>The tradition Amoghavarsha's court fostered produced, within little
+more than a century of his death, the three poets Kannada literary
+history still calls its <strong>ratnatraya</strong> — its three gems.
+<strong>Pampa</strong>, writing under a Vemulavada Chalukya feudatory,
+Arikesari II, completed the <em>Adipurana</em> and the <em>Vikramarjuna
+Vijaya</em> in 941 CE — the latter notable for openly favouring Karna
+and Duryodhana over the more conventionally heroic Pandavas, a genuinely
+unusual authorial sympathy for a retelling of the
+Mahabharata.<sup>44</sup> A real physical trace of his patronage
+survives: a trilingual inscription on Bommalagutta hill, in Kannada,
+Sanskrit, and Telugu, carved by <strong>Jinavallabha — Pampa's own
+brother</strong> — recording Arikesari II's gift of the village
+Dharmapura to Pampa upon the poem's completion.<sup>45</sup>
+<strong>Ponna</strong>, patronised directly by Krishna III, earned the
+title <em>Ubhaya Kavichakravarthi</em>, "supreme poet in two languages,"
+for equal mastery of Kannada and Sanskrit.<sup>46</sup> And
+<strong>Ranna</strong> — the third gem, author of the
+<em>Gadhayudha</em> — served the Western Chalukya king Tailapa II, the
+very man whose rise closes this final section: a poet, in other words,
+employed by the dynasty that would end the one just spent nine sections
+describing.<sup>47</sup></p>
+<p>The same Vemulavada feudatory court that produced Pampa produced, one
+generation later, <strong>Somadeva</strong> — whose
+<em>Yasastilaka</em>, already discussed for its Lokayata-quoting
+villain, is also the single richest surviving window onto ordinary
+Rashtrakuta-era social texture. Somadeva describes food by class with a
+specificity no inscription ever attempts: a poor man's dinner of stale
+rice thick with husk and gravel, rancid oil, burnt vegetables, sour
+gruel, set directly against a rich household's rice "white as beautiful
+women's glances," golden-hued broths, and curds compared, in the
+period's own florid idiom, to a young woman's breasts.<sup>48</sup> It
+is, by most accounts, among the earliest sustained pieces of political
+satire in Sanskrit literature — a genre this era seems to have needed,
+given how much of its own philosophy, as the previous section has shown,
+was already comfortable interrogating orthodox certainty.</p>
+<p>Mathematics kept pace with literature at the same court.
+<strong>Mahaviracharya</strong>, working under Amoghavarsha I's direct
+patronage and possibly born in Gulbarga — near enough to Manyakheta
+itself to place him almost literally in the dynasty's own backyard,
+though some scholarly accounts favour Mysore instead — completed the
+<em>Ganita-sara-sangraha</em> in 850 CE, described by later historians
+as the earliest Indian text devoted entirely to mathematics, separated
+cleanly from the astrology it had traditionally
+accompanied.<sup>49</sup> His book gave working rules for the area of an
+ellipse, for permutations and combinations, for cube roots, and stated —
+correctly, and ahead of most of the world — that negative numbers have
+no real square root; it also stated, incorrectly, that dividing by zero
+leaves a number unchanged, a genuine error preserved alongside the
+genuine breakthroughs.<sup>50</sup> The book found its own long
+afterlife: translated into Telugu by Pavuluri Mallana, it carried
+Mahaviracharya's mathematics into a different linguistic tradition
+entirely, the same pattern of translation-as-survival already seen in
+Amoghavarsha's own <em>Prashnottara Ratnamalika</em>.</p>
+<p>And then there is the dog. An inscription found at
+<strong>Atakuru</strong>, dated to around 949–950 CE — Krishna III's own
+reign, the same years as the Takkolam campaign — takes the form of a
+<strong>hero-stone</strong>, a <em>virgal</em>, the memorial genre
+already met commemorating fallen warriors. This one commemorates a dog
+named <strong>Kali</strong>, who died fighting a wild boar.<sup>51</sup>
+Hero-stones of this kind exist by the thousands across early medieval
+Karnataka, nearly always for human soldiers. That one was carved, with
+evident sincerity, for an animal's specific act of courage says
+something real about how widely this society was willing to extend the
+vocabulary of honour — not confined to kings, or even to men, but
+available, at least once, to a dog who did something brave enough to be
+remembered in stone for over a thousand years.</p>
+<h2 id="sec-xiv"><span class="roman">XIV.</span> The house of pride, undone</h2>
+<p>Krishna III's death in 967 CE left the empire he had extended to
+Rameshwaram without his own steadying hand, and the Rashtrakuta collapse
+that followed was fast even by the standards of a dynasty whose own rise
+had taken barely a generation. Within six years, in 973 CE,
+<strong>Tailapa II</strong> — a Chalukya feudatory, ruling from a small
+territory around Tardavadi in the empire's own service — overthrew the
+last effective Rashtrakuta king and founded what history remembers as
+the Kalyani, or Western, Chalukyas.<sup>52</sup> One modern historian,
+surveying the whole Rashtrakuta record, reaches for an image from
+outside history entirely: the empire, at its political climax in 967 CE,
+“crashed… like a meteor,” gone within what she calls an inconceivably
+short period of six years — the same collapse this account has just
+traced, given a name sharp enough to remember it by.<sup>52b</sup></p>
+<p>The shape of this ending will, by now, be entirely familiar.
+Jayasimha and Ranaraga served the Kadambas before their descendants
+conquered them. Dantidurga served the Badami Chalukyas, fought their
+wars against the Caliphate, and ended their rule within fifteen years of
+that service. And now Tailapa II — bearing, deliberately or not, the
+same dynastic name as the Chalukyas Dantidurga himself had once
+overthrown — rose from inside Rashtrakuta service to end the
+Rashtrakutas in turn. Four dynasties, four centuries, the same
+structural pattern repeating with almost mechanical regularity: not
+conquest from beyond the frontier, but the patient, generational climb
+of a trusted subordinate family, ending in one decisive break the moment
+that family judged the centre weak enough to take.</p>
+<p>What makes this particular ending sharper than the others is how
+quickly the wider world already sensed it. Al-Biruni, writing early in
+the eleventh century — not long after Tailapa II's own conquest —
+records the Rashtrakutas' Deccan as already passed into other hands, the
+Balhara title Sulaiman al-Tajir had once used with such confidence no
+longer attached to anyone at all.<sup>53</sup> Manyakheta itself did not
+become a new capital for its conquerors; Tailapa II ruled instead from
+Manyakheta only briefly before the Western Chalukya centre of gravity
+shifted elsewhere, and the city whose own name had meant something close
+to "the house of pride" slipped, within a generation or two, into the
+kind of afterlife every capital in this story has eventually shared with
+the others — a place people still lived, prayed, and traded in, but no
+longer a place kings needed to be seen ruling from.</p>
+<p>One careful modern assessment, weighing the Rashtrakutas against
+every dynasty that ruled the Deccan before or after them, calls them
+simply an able set of rulers — and the comparison, worked through, is
+hard to dispute. Their empire was more extensive than any Hindu
+successor state that would govern the same ground; only the Andhras, and
+possibly the early Chalukyas, arguably commanded a wider stretch of
+territory before them, and neither could claim an equally brilliant
+record of sustained campaigning. The Chalukyas, for all their own
+achievements already traced across this whole account, could point only
+to having successfully repelled Harsha’s invasion; the Andhras launched
+one expedition into the Madhyadesa and toppled the Kanvas, but their
+victory was, by comparison, a minor provincial affair. No other period
+of ancient Indian history saw the Deccan hold the same high political
+standing the Rashtrakutas gave it — and the observation of the Arab
+merchant Sulaiman, that the Rashtrakutas were among the most feared and
+powerful rulers of India, was, on this reckoning, no flattery, but a
+simple statement of fact.<sup>111</sup></p>
+<p>The dynasty’s one glaring structural weakness has already surfaced
+more than once in this account without being named directly: its
+inability to secure a peaceful succession. War attended the death of
+almost every occupant of the Manyakheta throne — the history of scarcely
+any other Hindu dynasty is disfigured by so many wars of succession —
+which makes it the more remarkable that an empire built on such unstable
+foundations at the very top should nonetheless have enjoyed so long and
+glorious a career underneath it.<sup>112</sup> A superficial reading of
+the Muslim chroniclers might suggest the Rashtrakutas pursued something
+like an anti-national policy, siding with Arab traders against their own
+Gurjara-Pratihara rivals — but the friendly treatment already described
+on this coast, the recognised Muslim headmen, the mosque access,
+reflects nothing more conspiratorial than plain commercial necessity:
+the Deccan’s own cavalry depended on Arabia for its horses, and no
+dynasty fighting wars from Kannauj to Rameshwaram could afford to
+alienate its own supply chain over sectarian scruple.<sup>113</sup>
+There is, in fact, no evidence whatsoever that the Rashtrakutas ever
+formed a political alliance with the Muslim rulers of Sindh against
+their northern rivals; the warmth was commercial, not military, and it
+stopped precisely where military cooperation would have begun.</p>
+<p>It is, on the same reckoning, a genuine pity that the Rashtrakutas
+neglected naval defence almost entirely — a weakness shared, admittedly,
+by nearly every Deccan power of the age, since no serious naval invasion
+of the peninsula had yet occurred in living historical memory to teach
+any of them otherwise, and it therefore seemed reasonable enough, at the
+time, that the money saved might be better spent
+elsewhere.<sup>114</sup> Administratively, the machinery already traced
+through Rashtra, Vishaya, Nadu, and Grama, and through Sankargana and
+Buddhavarsa’s careful requests for royal approval, gave ordinary
+subjects a substantial measure of genuine local self-government,
+delegated down to bodies with a real, effective voice in their own
+affairs — even in the total absence of anything resembling an elected
+parliament or a responsible cabinet, institutions that, it is worth
+remembering, existed nowhere else on Earth in this same period
+either.<sup>115</sup> Religious policy completed the picture of a state
+that mostly governed with a light hand: Jainism, Buddhism, and Hinduism
+lived side by side under Rashtrakuta rule in genuine peace and mutual
+toleration — a harmony conspicuously absent, in the very same decades,
+from Tamil country to the south, where Jains suffered active and
+sometimes violent persecution at the hands of militant
+Saivism.<sup>116</sup> Fine arts, away from Ellora, fared less well: the
+Mauryan, Gupta, Chalukya, and Pallava ages had each left their own
+distinctive and creditable contribution to Indian art, and no comparable
+claim can be made for the Rashtrakuta age as a whole — the Kailasa
+temple standing not as evidence of a flourishing artistic culture across
+the dynasty’s whole territory, but as a single, isolated, overwhelming
+exception, its makers quite possibly imported specialists from Kanchi
+rather than a native school the Deccan itself had cultivated and
+sustained.<sup>117</sup></p>
+<p>The wider religious and social world of these two centuries, finally,
+was one of genuine transition. It was toward the very end of the
+Rashtrakuta period that Buddhism effectively disappeared from the
+Deccan, giving way to reconversions into Hinduism; that intercaste
+dining and marriage faded from ordinary practice; and that the
+<em>parishads</em>, religious assemblies once vested with real power to
+settle social disputes, vanished from Hindu society altogether. New
+practices took their place: <em>vratas</em>, the tonsure of widows, the
+hardening of provincial subcastes, the reappearance of <em>sati</em> in
+the Deccan after a long absence, and an increasingly intricate
+<em>Smarta</em> ritual — changes the age itself believed were changes
+for the better, and which the subsequent history of Hindu society has
+shown, with the fuller vantage a thousand intervening years now allows,
+to have weakened rather than strengthened the wider society’s own unity
+and cohesion.<sup>118</sup> It is difficult, reading this record now,
+not to wish the thinkers of the Rashtrakuta age had taken a slightly
+longer view of what they were setting in motion.</p>
+<p>And yet the thread this whole part opened with — the merchants
+Sulaiman al-Tajir had no reason to flatter, the trade in cotton and
+diamonds and copper that made a Deccan king worth ranking alongside the
+Caliph and the Emperor of China — did not end with the dynasty that had
+governed it. Ranna, the third of Kannada's three gems, simply changed
+patrons, writing now for Tailapa II rather than for the house that had
+first made his craft possible. The ports at Bharoch and Thana kept
+receiving ships. The mosques on the coast kept their headmen. And
+somewhere in this same stretch of the Deccan, in a temple town whose own
+name had already given a merchant guild its identity two centuries
+earlier at Aihole, the organisation quietly building toward its own
+future across this whole part — the Ayyavole 500 — was by now no longer
+a promise sitting in the margins of an inscription. It was becoming
+exactly the kind of institution able to outlast a dynasty entirely:
+unlike Manyakheta, unlike Vatapi, unlike every fortress and every
+mountain temple raised so far in this story, a guild did not need a
+capital to survive the fall of the kings who had once ruled over it.
+That is where the next part of this series goes.</p>
+
+  </main>
+
+  <section class="notes-section">
+    <h2 id="notes" class="notes-head">Notes</h2>
+<p><strong>0b.</strong> On Indra I's rakshasa vivaha marriage to the
+Chalukya princess Bhavanaga, recorded in a verse of Krishna I's Bhandak
+plates, and his likely presence at Kaira as a Chalukya feudatory during
+a campaign against Valabhi.</p>
+<p><strong>1.</strong> On Dantidurga's early career assisting the Badami
+Chalukyas against Umayyad Arab incursions, c. 731-739 CE.</p>
+<p><strong>2.</strong> On Dantidurga's defeat of Kirtivarman II in 753
+CE and the founding of the Rashtrakuta dynasty.</p>
+<p><strong>3.</strong> On Dantidurga's inscriptional claims of campaigns
+from the Mahi to the Mahanadi rivers, treated as inscriptional hyperbole
+typical of the genre.</p>
+<p><strong>4.</strong> On Dantidurga's performance of the Hiranyagarbha
+at Ujjain, c. 752-753 CE, and on the ritual mechanics generally, see
+<em>The Hindu</em>, 10 Sept 2016 (thehindu.com), and Ballalasena’s
+<em>Danasagara</em>, discussed in D.C. Sircar, <em>Studies in the
+Religious Life of Ancient and Medieval India</em> (1971); the vessel
+appears cow-shaped in some tellings and as a plain golden pot
+(<em>kunda</em>) some three cubits high in others — representational
+variation on the same ceremony rather than a genuine discrepancy. The
+pregnancy rites performed over the king inside the vessel are prescribed
+in the <em>Matsya Purana</em>. D.D. Kosambi reads the whole rite as
+“acculturation”: a device that let rulers of obscure or tribal origin
+manufacture a caste identity outright, typically Kshatriya paired with a
+borrowed Brahmana <em>gotra</em>, rather than merely upgrade one they
+already held. The rite predates and outlives the Rashtrakutas by
+centuries — also attested for the Ananda dynasty’s Attivarman and
+Damodaravarman, the Vishnukundin king Madhavarman I, the Chalukya
+Mangalesha, the Pandya Jayantavarman, and later performed by the Chola
+Rajaraja I and his queen Dantisakti-Vitanki, and, in an altered but
+recognisable form, by the Travancore royal family into the twentieth
+century — a standing device for claiming Kshatriya status and sovereign
+independence across Deccan and south Indian dynasties, not a one-off
+Rashtrakuta invention.</p>
+<p><strong>4b.</strong> On Pulakeshin I’s own performance of the
+Hiranyagarbha, c. 540-567 CE, to establish the sovereignty of the newly
+independent Badami Chalukya line.</p>
+<p><strong>5.</strong> On the Samangad copper plates recording the
+Gurjara king of Malwa's attendance at the ceremony in the ritual role of
+pratihara (doorkeeper).</p>
+<p><strong>6.</strong> On Dantidurga's death without a male heir and
+succession by his uncle Krishna I.</p>
+<p><strong>7.</strong> On Manyakheta's location in modern Kalaburagi
+(Gulbarga) district, and its etymology.</p>
+<p><strong>8.</strong> On the Kagina river's course near Manyakheta,
+draining eastward via the Bhima and Krishna river system toward the Bay
+of Bengal.</p>
+<p><strong>9.</strong> On Krishna I's commissioning of the Kailasa
+temple at Ellora, a monolithic rock-cut structure excavated from a
+single mass of basalt.</p>
+<p><strong>10.</strong> On the Kailasa temple's architectural derivation
+from the Virupaksha temple at Pattadakal, financed by Queen
+Lokamahadevi.</p>
+<p><strong>11.</strong> On Krishna I's subjugation of the Gangas of
+Mysore.</p>
+<p><strong>12.</strong> On the estimated volume of rock removed in
+constructing the Kailasa temple (approx. 200,000 tonnes).</p>
+<p><strong>13.</strong> On Dhruva Dharavarsha's defeat of Vatsaraja and
+Dharmapala, and his conquest of Kannauj, r. 780-793.</p>
+<p><strong>14.</strong> On Govinda III's second defeat of Dharmapala and
+Chakrayudha, and his victory over a southern confederacy of Ganga,
+Chera, Pandya, and Pallava rulers.</p>
+<p><strong>15.</strong> On Amoghavarsha I's 64-year reign, his
+authorship of the Kavirajamarga and Prashnottara Ratnamalika (the latter
+translated into Tibetan), and his personal Jain faith.</p>
+<p><strong>16.</strong> On Amoghavarsha I's birth c. 800 CE at Sri
+Bhavan on the banks of the Narmada during Govinda III's return from his
+northern campaigns.</p>
+<p><strong>17.</strong> On Indra III's defeat of Mahipala I and plunder
+of Kannauj, and Al-Masudi's praise of him as the greatest king in
+India.</p>
+<p><strong>18.</strong> On Krishna III's defeat of Rajaditya at the
+Battle of Takkolam (949 CE), occupation of Tondaimandalam, and the
+victory pillar and temple erected at Rameshwaram.</p>
+<p><strong>1b.</strong> On Abu Zayd al-Sirafi's c. 916 CE compilation
+and expansion of Sulaiman al-Tajir's account, and corroborating
+descriptions of the Rashtrakutas by Ibn Khordadbih (c. 870 CE) and
+al-Istakhri.</p>
+<p><strong>5b.</strong> On Dantidurga's marriage of a daughter to the
+Pallava king Nandivarman II Pallavamalla of Kanchi.</p>
+<p><strong>8b.</strong> On the Deccan Trap basalt geology around
+Manyakheta and its suitability for cotton cultivation.</p>
+<p><strong>8c.</strong> On the tradition tracing "Rashtrakuta" to the
+Rastika/Rathika clan named in Ashokan edicts, treated as a legendary
+genealogical claim rather than settled fact.</p>
+<p><strong>8d.</strong> On the Garuda-and-river-goddess royal seal, the
+Palidhvaja banner inherited unaltered from the Badami Chalukyas,
+Dantidurga’s own unchanged seal despite his rise from feudatory to
+emperor, and the seal’s growing elaboration under Amoghavarsha I, Indra
+III, Govinda IV, and Krishna III.</p>
+<p><strong>12b.</strong> On varying scholarly estimates of the Kailasa
+temple's construction timeline, potentially spanning multiple reigns
+after Krishna I.</p>
+<p><strong>12c.</strong> On the Indra Sabha, a Jain cave complex at
+Ellora reflecting continued Rashtrakuta-era Jain patronage into the
+9th-10th centuries.</p>
+<p><strong>12d.</strong> On Pallava-style elephant and lion carving on
+the Kailasa temple’s plinth, and the theory that Pallava sculptor guilds
+were drawn to Ellora by Rashtrakuta patronage; on the absence of a
+foundation inscription at the temple itself, with attribution instead
+resting on the separately inscribed Dashavatara cave (linked to
+Dantidurga) and stylistic/iconographic evidence.</p>
+<p><strong>12f.</strong> On the solitary Rashtrakuta-era inscription in
+Cave 26 at Ajanta, dating renewed use of the chaitya hall to the 8th-9th
+centuries, per the Archaeological Survey of India’s own account of the
+site; on the caves’ rediscovery by Captain John Smith in 1819.</p>
+<p><strong>13b.</strong> On the Rashtrakuta imperial insignia
+incorporating Ganga and Yamuna river emblems following Dhruva's northern
+campaigns.</p>
+<p><strong>13c.</strong> On the Harivamsha Purana (Jinasena, 783 CE)
+recording the feudatory Sankargana seeking Dhruva's approval for a land
+grant.</p>
+<p><strong>14b.</strong> On the Harivamsha Purana recording the
+feudatory Buddhavarsa seeking Govinda III's approval for a land
+grant.</p>
+<p><strong>14c.</strong> On Govinda III's succession over an elder
+sibling as the son judged most capable.</p>
+<p><strong>16b.</strong> On Revakanimaddi, daughter of Amoghavarsha I,
+administering the Edathore Vishaya in her own right.</p>
+<p><strong>19.</strong> On the Rashtrakuta administrative hierarchy
+(Rashtra/Mandala, Vishaya, Nadu, Grama) and their respective officers,
+and the sixteen Rashtras recorded under Amoghavarsha I.</p>
+<p><strong>20.</strong> On the central Rashtrakuta ministerial offices:
+Mahasandhivigrahi (chief minister), Dandanayaka (commander),
+Mahakshapataladhikrita (foreign minister), and Mahamatya/Purnamathya
+(prime minister).</p>
+<p><strong>21.</strong> On the Rashtrakuta standing army cantonment at
+Manyakheta, the Sthirabhuta Kataka.</p>
+<p><strong>21b.</strong> On the practice of feudatory lords seeking
+prior royal approval before making land grants, as evidenced in the
+Harivamsha Purana.</p>
+<p><strong>21c.</strong> On R.S. Sharma's argument that land grants and
+sub-infeudation produced new social categories, including the Kayastha
+scribal class.</p>
+<p><strong>21d.</strong> On the Mayamata's rank-based housing hierarchy
+(an eleven-storeyed house for the emperor of the earth, down to
+single-storey dwellings for the lowest ranks).</p>
+<p><strong>21e.</strong> On the Deopara inscription of Vijayasena
+recording the artisan guild-head Shulapani holding the title ranaka.</p>
+<p><strong>22.</strong> On diamond fields around Cudappah, Bellary, and
+Kurnool, in the region later associated with Golconda.</p>
+<p><strong>23.</strong> On copper mining across Cudappah, Bellary,
+Chanda, Buldhana, Narsingpur, Ahmadnagar, Bijapur, and Dharwar.</p>
+<p><strong>24.</strong> On cotton cultivation in southern Gujarat,
+Khandesh, and Berar, and export via the port of Bharoch (Barygaza).</p>
+<p><strong>25.</strong> On the export of fine cotton calicos from
+Burhanpur and Berar to Persia, Arabia, Turkey, Cairo, and reportedly
+Poland.</p>
+<p><strong>26.</strong> On Konkan (Silhara) exports of betel, coconut,
+and rice, and Mysore (Ganga) exports of sandalwood, timber, teak, ebony,
+and ivory.</p>
+<p><strong>27.</strong> On incense and perfume exports via the ports of
+Thana and Saimur.</p>
+<p><strong>28.</strong> On Bharoch, Thana, Sopara, and Chaul as the
+primary western trade ports, with histories reaching back to the
+Satavahana period and the Periplus.</p>
+<p><strong>29.</strong> On the formal accommodation of Arab merchant
+communities on the western coast, including local Muslim headmen and
+mosque access.</p>
+<p><strong>29b.</strong> On the Jewish merchant community at
+Cranganore/Shingly and the copper-plate grant traditionally associated
+with Joseph Rabban, conferring privileges over the Anjuvannam trading
+community.</p>
+<p><strong>29c.</strong> On the 1341 flood that silted the port of
+Cranganore and the Jewish community’s relocation to Cochin, with a new
+synagogue completed within four years.</p>
+<p><strong>29d.</strong> On the Cairo Geniza trade letters (11th-13th
+c.) documenting Arabic-speaking Jewish merchant networks on the Malabar
+coast, and on Abraham Ben Yiju, a 12th-century Jewish trader resident in
+Mangalore.</p>
+<p><strong>30.</strong> On the Rig Veda's Creation Hymn (10.129) and its
+agnostic questioning of the universe's origin.</p>
+<p><strong>31.</strong> On Mahavira and the Buddha's non-theistic
+doctrinal foundations, and Ajita Kesakambala's explicit materialist
+atheism, c. 500 BCE.</p>
+<p><strong>32.</strong> On Panini's grammatical definition of nastika,
+and Kautilya's Arthashastra listing Samkhya, Yoga, and Lokayata as
+schools of critical inquiry.</p>
+<p><strong>33.</strong> On Adi Shankara's (c. 788-820 CE) refutations
+specifically targeting Lokayata philosophy.</p>
+<p><strong>34.</strong> On Jinasena's explicit denial of a creator god,
+as recorded in his surviving writings.</p>
+<p><strong>35.</strong> On the Vaishya varna's rank within orthodox
+Brahmanical law and the Dharmasutras' denunciation of money-lending.</p>
+<p><strong>36.</strong> On Jainism and Buddhism's rejection of caste
+hierarchy and accommodation of trade and money-lending, and wealthy
+merchants (setthis) as their major patron class.</p>
+<p><strong>37.</strong> On R.S. Sharma's argument that the Gupta Empire
+was effectively a merchant-class dynasty.</p>
+<p><strong>38.</strong> On the Satavahana-era funding of the earliest
+Ajanta caves by guilds and merchants using the
+Ter-Pratishthana-Bhogavardhana-Ajanta-Ujjain trade corridor.</p>
+<p><strong>39.</strong> On the Vakataka-era shift to royal patronage at
+Ajanta (King Harishena, minister Varahadeva, local ruler Upendragupta)
+and the trade route's decline around 470 CE.</p>
+<p><strong>40.</strong> On Somadeva's Yasastilaka (959 CE), composed
+under the Vemulavada Chalukyas, and its corrupt minister character
+Pamarodara's use of Lokayata arguments.</p>
+<p><strong>41.</strong> On Munjaraya Vadighanghala Bhatta, adviser to
+Krishna III, and his multi-tradition philosophical expertise and
+tutelage of the Ganga king Butuga II.</p>
+<p><strong>42.</strong> On the disputed authorship of the Kavirajamarga,
+variously attributed to Amoghavarsha I himself or his court poet
+Srivijaya.</p>
+<p><strong>43.</strong> On Amoghavarsha I's authorship of the
+Prashnottara Ratnamalika and its later translation into Tibetan.</p>
+<p><strong>44.</strong> On Pampa's Adipurana and Vikramarjuna Vijaya
+(941 CE), composed under the Vemulavada Chalukya feudatory Arikesari
+II.</p>
+<p><strong>45.</strong> On the trilingual Bommalagutta inscription,
+carved by Jinavallabha (Pampa's brother), recording Arikesari II's grant
+of Dharmapura to Pampa.</p>
+<p><strong>46.</strong> On Ponna, patronised by Krishna III, and his
+title Ubhaya Kavichakravarthi.</p>
+<p><strong>47.</strong> On Ranna, author of the Gadhayudha, court poet
+to the Western Chalukya king Tailapa II.</p>
+<p><strong>48.</strong> On Somadeva's Yasastilaka and its detailed
+class-based food descriptions.</p>
+<p><strong>49.</strong> On Mahaviracharya's Ganita-sara-sangraha (850
+CE), composed under Amoghavarsha I's patronage, and disputed birthplace
+(Gulbarga or Mysore).</p>
+<p><strong>50.</strong> On Mahaviracharya's mathematical content,
+including correct statements on negative-number square roots and an
+incorrect statement on division by zero.</p>
+<p><strong>51.</strong> On the Atakuru inscription (c. 949-950 CE), a
+hero-stone (virgal) commemorating a dog named Kali who died fighting a
+wild boar.</p>
+<p><strong>52.</strong> On Tailapa II's overthrow of the last effective
+Rashtrakuta king in 973 CE and the founding of the Kalyani (Western)
+Chalukya dynasty.</p>
+<p><strong>52b.</strong> Jayashri Mishra, <em>Social and Economic
+Conditions under the Imperial Rashtrakutas</em> (1991), on the empire’s
+collapse “like a meteor” within six years of its 967 CE political
+peak.</p>
+<p><strong>53.</strong> On Al-Biruni's early 11th-century account
+confirming the Rashtrakuta collapse and the disappearance of the
+"Balhara" title.</p>
+<p><strong>54.</strong> On the identification of udranga with bhagakara
+as the normal Rashtrakuta-era land tax, per Smriti references to the
+king’s sixth-part share (shashthamsha).</p>
+<p><strong>55.</strong> On uparikara and bhogakara as interchangeable
+terms for a secondary, usually in-kind, impost over and above the base
+land tax.</p>
+<p><strong>56.</strong> On Manu VIII.307 and the commentator Sarvajna
+Narayana’s gloss of pratibhagam as daily presents of fruit, flowers,
+vegetables, and grass, typically assigned to local officers as part of
+their pay.</p>
+<p><strong>57.</strong> On the Arthashastra’s permitted land-tax range
+of 16-50%, with irrigated land taxed up to double the cost of
+production.</p>
+<p><strong>58.</strong> On Sukra’s flat 25% land-tax rate and
+Chandeshvara’s reading of shadbhaga as figurative rather than
+literal.</p>
+<p><strong>59.</strong> On the Bevinahalli inscription (Chitaldurg
+district, reign of Khottiga) recording 50 gadyanas’ annual revenue from
+the villages of Madlur and Malagavadi, equal to approximately 25 tolas
+of gold.</p>
+<p><strong>60.</strong> On the Tuppad Kurahatti inscription recording a
+grant by the gamunda Tondayya and six village gamundas of Belvola Three
+Hundred, with fixed revenue of four golden gadyanas on fifty mattars of
+land and one mattar of garden.</p>
+<p><strong>61.</strong> On comparative mattar dimensions across
+localities (Mangoli, and a Shilahara prince’s grant using three
+different mattar-measures), used to estimate the Tuppad Kurahatti mattar
+at roughly four to five acres.</p>
+<p><strong>62.</strong> On the Konerirajapuram inscription recording
+temple land taxed at half the ordinary Chola-era rate of 100 kalams of
+paddy per veli.</p>
+<p><strong>63.</strong> On the Honawad inscription (Dharwar district,
+1054 CE) recording King Someshvara’s grant of dry land to a temple at a
+nominal quit-rent of half a pana per mattar.</p>
+<p><strong>64.</strong> On guild networks already spread across the
+Deccan by the Andhra period, regulating trade and industry, training
+apprentices, and conducting banking business.</p>
+<p><strong>65.</strong> On the c. 775 CE weavers’ guild at Laxmesvar and
+its agreed contribution toward a religious object.</p>
+<p><strong>66.</strong> On the c. 880 CE Mulgund inscription recording a
+gift by four heads of a guild with membership described as spread across
+360 towns, made with the consent of 2,000 merchants.</p>
+<p><strong>67.</strong> On the 1083 CE Belgamve inscription describing a
+guild ruling over or maintaining offices in eighteen cities, with an
+executive of nine.</p>
+<p><strong>68.</strong> On the 1161 CE Managoli inscription recording
+joint grants by the guilds of oilmen, weavers, artisans, basket-makers,
+mat-makers, and fruit-sellers.</p>
+<p><strong>69.</strong> On the Kolhapur (Saka 1058) and Miraj (Saka
+1066) inscriptions describing a Vira Balanju guild with membership
+spread across four districts and an executive of fifteen.</p>
+<p><strong>70.</strong> On the Yajnavalkyasmriti and Nitivakyamrita’s
+independent description of guild executive committees as standard
+practice.</p>
+<p><strong>71.</strong> On the Vira Balanjus’ hill-device banner, and
+the Dambal guild’s umbrellas and chauris obtained by royal charter from
+Jagadekamalla (c. 1018-1040 CE).</p>
+<p><strong>72.</strong> On the Dambal inscription styling the guild
+“lord of Aihole, the best of towns.”</p>
+<p><strong>73.</strong> On the Harivamsha’s description of guild banners
+bearing the implements of members’ trades, corroborated by the Belgamve
+and Kolhapur banner descriptions.</p>
+<p><strong>74.</strong> On towns handed over to creditor guilds as
+security for loans advanced to debtor states.</p>
+<p><strong>75.</strong> On guild and village-community militias
+maintained to protect goods and property in transit, and Tavernier’s
+later account of caravan guards under Muslim rule.</p>
+<p><strong>76.</strong> On the mid-fifth-century Mandsor inscription
+describing guild members as expert archers.</p>
+<p><strong>77.</strong> On a Kanheri inscription of Amoghavarsha I’s
+reign recording a guild bank investment paying interest in perpetuity,
+with the rate set periodically by experts.</p>
+<p><strong>78.</strong> On silver coins bearing the legend associated
+with Krishnarajah, tentatively but unreliably attributed to Krishna I on
+the grounds of Gupta-imitative style and absence of dating.</p>
+<p><strong>79.</strong> On dramma as the Sanskritised form of the Greek
+drachme, inherited via Indo-Bactrian silver coinage.</p>
+<p><strong>80.</strong> On the theoretical 146-grain suvarna standard
+and the actual 45-55 grain range of gold coins found in the Deccan of
+this period, including the Cambay plates of Govinda IV.</p>
+<p><strong>81.</strong> On kalanju as both a plant-seed name and the
+standard gold coin of Karnataka and Tamil country, averaging a quarter
+tola.</p>
+<p><strong>82.</strong> On gadyanaka as two kalanjus (c. 90 grains) and
+the kasu as roughly fifteen grains of gold.</p>
+<p><strong>83.</strong> On manjadi (one-twentieth of a kalanju) and
+akkam (one-twelfth of a kasu) as the smallest circulating
+denominations.</p>
+<p><strong>84.</strong> On the comparative table of coin weights and
+approximate early-twentieth-century rupee values for dramma, kalanju,
+gadyanaka, kasu, manjadi, and akkam.</p>
+<p><strong>84b.</strong> Gold and silver spot prices as of August 2026
+(approx. A$188/g and A$2.70/g respectively); figures are illustrative
+conversions of period coin weights at current bullion rates, not
+historical prices in any currency, and will drift with the market.</p>
+<p><strong>84c.</strong> On the period’s assumed gold-silver price ratio
+of roughly 1:15 (per Sukraniti and later corroborating estimates),
+against a current market ratio of roughly 1:70.</p>
+<p><strong>85.</strong> On barter as a significant component of
+government transactions, by analogy with contemporary Tamil-country
+practice.</p>
+<p><strong>86.</strong> On the normal 12-15% interest rate on cash
+capital, corroborated across Manu, Yajnavalkya, Kautilya, and the
+epigraphical record.</p>
+<p><strong>87.</strong> On Manu’s caste-graded interest-rate permissions
+(24% from Brahmanas up to 60% from Shudras) and the inference of higher
+commercial rates (20-50%) by credit risk.</p>
+<p><strong>88.</strong> On Kautilya, Manu, Yajnavalkya, and Vasishtha’s
+higher permitted interest rates on grain capital, and epigraphical rates
+of 25-50% on corn loaned by village communities.</p>
+<p><strong>89.</strong> On a 915 CE Bana inscription recording 25%
+interest and an Annamalai temple record showing an effective 40%
+rate.</p>
+<p><strong>90.</strong> On comparative Chola-era price data (rice, ghee,
+oil, salt, pepper) drawn from late-tenth-century inscriptions.</p>
+<p><strong>91.</strong> On the price of camphor and the reportedly 120%
+interest rate charged to finance camphor shipments, reflecting the cost
+and risk of overseas import.</p>
+<p><strong>91b.</strong> On millets as the older and more widely
+consumed Deccan staple and rice as an aspirational, higher-status grain
+(K. Morrison’s archaeobotanical work on South India); on the
+<em>Manasollasa</em> (composed 1129-30 CE by Someshvara III of the
+Western Chalukyas, successor dynasty to the Rashtrakutas in the same
+territory) and its core rice and ghee royal meal structure, via
+Elizabeth Lambourn, <em>Abraham’s Luggage</em> (2018).</p>
+<p><strong>94.</strong> On the Tanjore temple wage table for accountant,
+sub-accountant, carpenter-master, temple-watchman, drawer of water, and
+temple brahmacharin.</p>
+<p><strong>95.</strong> On the comparison of these wages against
+documented subsistence costs of roughly 20-37.5 kalams of paddy per
+person per year.</p>
+<p><strong>96.</strong> On land priced at roughly four times its annual
+net produce, implying an effective ~25% return on purchase price.</p>
+<p><strong>97.</strong> On the Dhulia copper plates (779 CE) and the
+standard higher-education curriculum of Veda, Vyakarana, Jyotisha,
+Sahitya, Dharmasastra, Puranas, Nyaya, and Mimamsa.</p>
+<p><strong>98.</strong> On the three institutional channels for higher
+education: temple-attached mathas, agrahara villages, and private or
+community-run institutions.</p>
+<p><strong>99.</strong> On the Kalas (Dharwar district) agrahara
+inscription of 975 CE recording a fifty-mattar endowment supporting a
+Sanskrit college of 200 Brahmana households.</p>
+<p><strong>100.</strong> On the etymology of Salotgi from Pavittage and
+Shala, and its location in Bijapur district.</p>
+<p><strong>101.</strong> On the Salotgi college hall, built in 945 CE by
+Narayana, minister of Krishna III, attached to the temple of
+Trayipurusha, with twenty-seven boarding houses and a twelve-nivartana
+endowment.</p>
+<p><strong>102.</strong> On the later reconstruction of the collapsed
+Salotgi college hall by a local feudatory chief.</p>
+<p><strong>103.</strong> On the agrahara system as indirect state
+subsidy of education via the ishtapurta principle.</p>
+<p><strong>104.</strong> On direct educational land grants at Soratur
+(951 CE), Belur (1022 CE), and Habale (1084 CE).</p>
+<p><strong>105.</strong> On the Dambal guild’s maintenance of a college
+in addition to its municipal and commercial roles.</p>
+<p><strong>106.</strong> On the grain-share system supporting permanent
+village servants (carpenter, smith) but not extending to the village
+teacher.</p>
+<p><strong>107.</strong> On village teachers’ reliance on annual fees,
+festival gifts, and supplementary income from writing letters, bonds,
+and leases.</p>
+<p><strong>108.</strong> On the likelihood that primary literacy in this
+period was largely confined to Brahmana and trading-class children.</p>
+<p><strong>109.</strong> On Karnataka’s status as a stronghold of
+Jainism and the predominance of Jain authors among early Kannada
+writers.</p>
+<p><strong>110.</strong> On the absence of Marathi from the epigraphical
+record of this period and the later dating of its earliest literary
+compositions.</p>
+<p><strong>111.</strong> On a comparative assessment of the Rashtrakuta
+empire’s extent and political standing relative to the Andhras, early
+Chalukyas, and their own Hindu successor states.</p>
+<p><strong>112.</strong> On the recurrence of succession wars at nearly
+every Rashtrakuta accession.</p>
+<p><strong>113.</strong> On the Rashtrakutas’ friendly policy toward
+Arab traders as a function of dependence on Arabia for cavalry horses,
+and the absence of evidence for political alliance with the Arab rulers
+of Sindh.</p>
+<p><strong>114.</strong> On the general neglect of naval defence among
+Deccan powers of this period.</p>
+<p><strong>115.</strong> On the substantial degree of local
+self-government delegated to district, taluka, and village bodies under
+Rashtrakuta administration.</p>
+<p><strong>116.</strong> On the peaceful coexistence of Jainism,
+Buddhism, and Hinduism under Rashtrakuta rule, contrasted with Saivite
+persecution of Jains in contemporary Tamil country.</p>
+<p><strong>117.</strong> On the Rashtrakuta age’s comparatively limited
+contribution to fine arts outside the Kailasa temple, and the
+possibility that its artisans were drawn from Kanchi.</p>
+<p><strong>118.</strong> On religious and social transition across the
+Rashtrakuta period: the decline of Buddhism, the disappearance of
+intercaste dining and religious parishads, and the emergence or revival
+of vratas, widow tonsure, provincial subcastes, sati, and Smarta
+ritual.</p>
+
+  </section>
+
+  <footer class="pagefoot">
+    <span>Part III of IV &middot; Karnataka Trade Cities</span>
+    <span><a class="backlink" href="../index.html">&larr; Back to series index</a></span>
+  </footer>
+</div>
+</body>
+</html>
